@@ -1,3 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :article, :user, foreign_key: true
+  belongs_to :article
+  belongs_to :user
 end
