@@ -22,9 +22,10 @@
 
 .article-buttons {
   position: absolute;
-  top: 8px;
+  top: 3px;
   right: 16px;
   vertical-align: middle;
+  padding-left: 15px;
 }
 
 .fa-padding {
@@ -39,7 +40,6 @@
 .message-icon {
   display: inline-block;
   transform: scale(.9);
-  padding-top: 5px;
 }
 
 .fa-biggish {

@@ -1,1 +1,23 @@
-<h1><%= @articles %></h1>
+<div class="container">
+  <div class="profile-picture">
+   <%= image_tag(current_user.photo, class: "profile-image") %>
+  </div>
+
+  <div class="user-box">
+    <div class="user-header">
+      <h1> <%= current_user.first_name %>'s Articles</h1>
+    </div>
+
+    <div class="user-content">
+      <% @articles.each do |article| %>
+        <li class="article-list">
+          <ul>
+            <%= link_to article.title, article_path(article.id)%>
+            <span class="edit-icon">
+              <i class="fa-regular fa-pen-to-square fa-xl user-icon"></i>
+              <i class="fa-regular fa-trash-can fa-xl user-icon"></i>
+            </span>
+          </ul>
+        </li>
+      <% end %>
+    </div>
