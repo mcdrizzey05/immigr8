@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+category_1 = Category.create(title: 'Test-Category',
+  description: 'This category is about lala and will help you to lele. Congrats!')
+
+  category_1.save
+
+user_1 = User.create(email: 'test@test.com',
+  username: 'test_user',
+  location: 'Berlin',
+  password: '123456')
+
+  article_1 = Article.create(title: 'How to Test',
+  content: 'testestestestestseed')
+
+  article_1.user_id = user_1.id
+  article_1.category_id = category_1.id
+  article_1.save
+
+  category_2 = Category.create(title: "Beautiful Category",
+    description: 'Category 2 is about lalalalelelelililiili.')
+
+    category_2.save
+
+  user_2 = User.create(email: 'lalala@test.com',
+    username: 'test--lala',
+    location: 'Berlin',
+    password: '123456')
+
+    article_2 = Article.create(title: 'How to Test nanana',
+    content: 'lorem ipsum.')
+
+    article_2.user_id = user_2.id
+    article_2.category_id = category_2.id
+    article_2.save
