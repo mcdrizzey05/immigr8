@@ -17,7 +17,7 @@ user_1 = User.create(email: 'test@test.com',
   password: '123456')
 
   article_1 = Article.create(title: 'How to Test',
-  content: 'testestestestestseed')
+  content: 'testestestestestseed',)
 
   article_1.user_id = user_1.id
   article_1.category_id = category_1.id
@@ -39,3 +39,11 @@ user_1 = User.create(email: 'test@test.com',
     article_2.user_id = user_2.id
     article_2.category_id = category_2.id
     article_2.save
+
+    article_3 = Article.create(title: 'How to Test',
+    content: 'testestestestestseed',
+    banner: 'https://www.visitberlin.de/system/files/styles/visitberlin_bleed_header_visitberlin_xl_1x/private/image/oberbaum08_DL_PPT_0.jpg.webp?h=d9f53a62&itok=HHhdrzN1')
+
+    article_3.user_id = user_1.id
+    article_3.category_id = category_1.id
+    article_3.save
