@@ -1,0 +1,21 @@
+html {
+  background: url(https://res.cloudinary.com/diafrrnkz/image/upload/v1678283787/background-image_j4dn5p.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+body {
+  background: none;
+}
+
+@media screen and (max-width: 414px) {
+  html {
+  background-image: url('https://res.cloudinary.com/diafrrnkz/image/upload/v1678284087/immigr8_ud3cwe.png');
+  background-repeat: no-repeat;
+  background-size: 500px;
+  }
+}
