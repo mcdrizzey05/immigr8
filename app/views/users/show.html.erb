@@ -2,31 +2,32 @@
   <h2>Welcome back, <%= @user.username %> !</h2>
 </div>
 
-<div class="container-show-user">
+<div class="container-card-user text-center">
   <div class="row">
     <div class="column">
-      <h2>Account Settings</h2>
+     <%# <%= if @user.photo we will have to add that here %><br>
+      <h3>Account Settings</h3>
         <p> Full Name: <%= @user.first_name  %> <%= @user.last_name %></p><br>
         <p> Username: <%= @user.username %></p><br>
         <p> Email Address: <%= @user.email%></p><br>
         <p> Location: <%= @user.location%></p><br>
-        <button class="btn btn-light"><%= link_to "Update Account Information", edit_user_registration_path %><button>
+        <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Update Account Information", edit_user_registration_path %></button-user>
     </div>
   </div>
 </div>
-
-<div class="container-show-user">
-  <div class="row">
-    <div class="column">
-      <h2>Your articles</h2>
-        <% @user.articles.each do |article| %>
-        <ol><li> <%= article.category.title%>: <br> <%= article.category.title %></ol>
-          <div class="m-1">
-            <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "See Article", article_path(article.category.id) %></button-user>
-            <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Edit Article",  edit_article_path(article.id) %></button-user>
-            <button-user class="btn btn-outline-warning btn-sm text-decoration-none"><%= link_to "Delete Article", article, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
-          </div>
+<div class="container-card-user text-center">
+  <br>
+    <div class="row">
+      <div class="column">
+        <h3>Your articles</h3>
+          <% @user.articles.each do |article| %>
+          <ol><li> <%= article.category.title%>: <br> <%= article.title %></ol>
+            <div class="m-1"> <%# the links are not completely right yet guys %>
+              <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "See Article", category_article_path(article) %></button-user>
+              <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Edit Article",  edit_article_path(article) %></button-user>
+              <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Delete Article", article, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
+            </div>
           <% end %>
+      </div>
     </div>
-  </div>
 </div>
