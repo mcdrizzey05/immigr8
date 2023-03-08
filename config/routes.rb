@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :categories do
     resources :articles, only: ['new', 'create', 'show']
   end
-  resources :articles, only: ['destroy', 'edit', 'update']
+  resources :articles, only: ['destroy', 'edit', 'update', 'index']
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

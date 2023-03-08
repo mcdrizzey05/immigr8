@@ -1,0 +1,61 @@
+.profile-picture {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image {
+  max-width: 200px;
+  border-radius: 100px;
+  border: 2px solid black;
+}
+
+.user-header {
+  position: relative;
+}
+
+.user-button {
+  position: absolute;
+  top: 0px;
+  right: 16px;
+}
+
+.user-icon {
+  text-decoration: none;
+  color: black;
+}
+
+.user-box {
+  justify-content: center;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  max-width: 475px;
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+}
+
+.user-box h1 {
+  font-family: "Abhaya Libre";
+  font-size: x-large;
+}
+
+.user-content {
+  justify-content: baseline;
+}
+
+.column-header {
+  line-height: 0;
+  padding-top: 50px;
+  padding-bottom: 2px;
+  font-weight: 800;
+  font-family: Helvetica, sans-serif;
+}
+
+.column-text {
+  line-height: 0;
+  padding-top: 2px;
+}
