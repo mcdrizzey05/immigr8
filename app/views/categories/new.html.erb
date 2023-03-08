@@ -3,7 +3,7 @@
         <%= simple_form_for(@category)  do |f| %>
           <%= f.input :title, label: 'Category title: ' %>
           <%= f.input :description, as: :text, label: 'Category description:' %>
-          <%# <%= f.input :photos, as: :file, input_html: { multiple: true } # we will have to add that later %>
+          <%# <%= f.input :photos, as: :file, input_html: { multiple: true } # we will have to add that later maybe%>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>
     <br>
