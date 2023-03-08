@@ -1,10 +1,24 @@
 <div class="container">
-  <p>hallo test here are our articles to this category</p>
-  <div class="article-card">
-      <% @articles.each do |article| %>
-      <li><%= link_to article.title, article_path(article)%></li>
-      <% end %>
-    </ul>
-    <p><%= link_to  "Add new article", new_category_article_path(@category) %></p>
+  <div class="back-to-btn">
+    <i class="fa-solid fa-arrow-left"></i>
+    <%= link_to "Back to categories", categories_path, class: "back-to-link" %>
+  </div>
+
+  <div class="categories-articles-container">
+    <div class="category-description">
+      <h3><%= @category.title %> </h3>
+        <p> <%= @category.description %> </p>
+    </div>
+
+        <% @articles.each do |article| %>
+        <%= link_to category_article_path(article), class:"text-decoration-none text-reset" do %>
+          <div class="category-article-card">
+            <h3> <%= article.title %> <h3>
+          </div>
+          <% end %>
+        <% end %>
+          <%# <%= image_tag(@article.banner, class: "enter-your-class-here") %>
+      <br>
+    <button class="add-article"><%= link_to  "Add new article", new_category_article_path(@category) %></button>
   </div>
 </div>
