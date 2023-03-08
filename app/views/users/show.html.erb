@@ -1,0 +1,32 @@
+<div class="container-welcome text-center">
+  <h2>Welcome back, <%= @user.username %> !</h2>
+</div>
+
+<div class="container-show-user">
+  <div class="row">
+    <div class="column">
+      <h2>Account Settings</h2>
+        <p> Full Name: <%= @user.first_name  %> <%= @user.last_name %></p><br>
+        <p> Username: <%= @user.username %></p><br>
+        <p> Email Address: <%= @user.email%></p><br>
+        <p> Location: <%= @user.location%></p><br>
+        <button class="btn btn-light"><%= link_to "Update Account Information", edit_user_registration_path %><button>
+    </div>
+  </div>
+</div>
+
+<div class="container-show-user">
+  <div class="row">
+    <div class="column">
+      <h2>Your articles</h2>
+        <% @user.articles.each do |article| %>
+        <ol><li> <%= article.category.title%>: <br> <%= article.category.title %></ol>
+          <div class="m-1">
+            <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "See Article", article_path(article.category.id) %></button-user>
+            <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Edit Article",  edit_article_path(article.id) %></button-user>
+            <button-user class="btn btn-outline-warning btn-sm text-decoration-none"><%= link_to "Delete Article", article, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
+          </div>
+          <% end %>
+    </div>
+  </div>
+</div>
