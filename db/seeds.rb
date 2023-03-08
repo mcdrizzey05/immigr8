@@ -17,7 +17,9 @@ user_1 = User.create(email: 'alina@immigr8.de',
   last_name: 'Bich',
   username: 'alina_maus',
   location: 'Berlin',
-  password: '123456')
+  password: '123456',
+  photo: 'https://res.cloudinary.com/diafrrnkz/image/upload/v1678286693/Screenshot_2023-03-08_at_15.44.36_a9lg5d.png'
+  )
 
   article_1 = Article.create(title: 'German courses & classes in Germany',
   content: 'Are you interested in learning German or improving your German language skills? Browse our list of language schools offering German classes for expatriates and international companies in Germany. As well as general German courses & private tuition for individuals, they also offer specialised courses such as business German and group lessons for employees.',)

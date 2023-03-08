@@ -2,6 +2,10 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: ['destroy', 'edit', 'update']
   before_action :set_user, only: ['new', 'create']
 
+  def index
+    @articles = current_user.articles
+  end
+
   def new
     @category = Category.find(params[:category_id])
     @article = Article.new
