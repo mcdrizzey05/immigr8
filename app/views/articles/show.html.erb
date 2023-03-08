@@ -1,14 +1,24 @@
 <div class="container">
-  <%= link_to "Back to articles", categories_path(@article.category.id) %>
-</div>
-<div class="article-banner" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= @article.banner %>')">
-  <div class="text-container">
-    <div class="banner-text container">
-      <h4><%= @article.title %></h4>
-      <p>By: <%= @article.user.first_name %></p>
-    </div>
+  <div class="back-to-btn">
+    <i class="fa-solid fa-arrow-left"></i>
+    <%= link_to "Back to articles", categories_path(@article.category.id), class: "back-to-link" %>
   </div>
-</div>
-<div class="container">
-  <p>hallo thank you for reading this article hihi</p>
+  <div class="article-content">
+    <div class="article-header">
+      <div class="article-title">
+        <h4><%= @article.title %></h4>
+        <h5>By: <%= @article.user.first_name %></h5>
+      </div>
+      <div class="article-buttons">
+        <span class="message-icon">
+          <i class="fa-regular fa-message fa-padding fa-biggish"></i>
+        </span>
+        <i class="fa-regular fa-star fa-2x fa-padding fa-bigger"></i>
+      </div>
+    </div>
+    <div class="article-text">
+      <h3>Posted on: <%= @article.created_at.strftime("%B %d %Y") %></h3>
+        <p><%= @article.content %></p>
+    </div>
+   </div>
 </div>
