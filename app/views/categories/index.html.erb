@@ -4,5 +4,8 @@
       <li><%= link_to category.title, category_path(category)%></li>
       <% end %>
     </ul>
+
+    <%= render "shared/categorycard" %>
+
   <p><%= link_to  "Add new category", new_category_path %></p>
 </div>
