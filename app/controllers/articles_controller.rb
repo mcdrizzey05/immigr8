@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     @article.category = Category.find(params[:category_id])
     if @article.save
-      redirect_to user_path(@user)
+      redirect_to category_article_path(@article.category, @article)
     else
       render new
     end

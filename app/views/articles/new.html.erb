@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <h4>Add article</h4>
-        <%= simple_form_for(@category)  do |f| %>
+        <%= simple_form_for([@category, @article])  do |f| %>
           <%= f.input :title, label: 'Article title: ' %>
           <%= f.input :content, as: :text, label: 'Article content:' %>
           <%# <%= f.input :photos, as: :file, input_html: { multiple: true } # we will have to add that later %>
