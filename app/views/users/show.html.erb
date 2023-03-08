@@ -6,9 +6,10 @@
   <div class="row">
     <div class="column">
       <h2>Account Settings</h2>
-        <p> Username : <%= @user.username %></p><br>
-        <p> Email : <%= @user.email%></p><br>
-        <p> Location : <%= @user.location%></p><br>
+        <p> Full Name: <%= @user.first_name  %> <%= @user.last_name %></p><br>
+        <p> Username: <%= @user.username %></p><br>
+        <p> Email Address: <%= @user.email%></p><br>
+        <p> Location: <%= @user.location%></p><br>
         <button class="btn btn-light"><%= link_to "Update Account Information", edit_user_registration_path %><button>
     </div>
   </div>
@@ -25,6 +26,7 @@
             <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Edit Article",  edit_article_path(article.id) %></button-user>
             <button-user class="btn btn-outline-warning btn-sm text-decoration-none"><%= link_to "Delete Article", article, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
           </div>
+          <% end %>
     </div>
   </div>
 </div>
