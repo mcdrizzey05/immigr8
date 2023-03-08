@@ -1,8 +1,14 @@
-<div class="article-banner" style="background-image: url('<%= @article.banner %>')">
-  <div class="article-overlay"></div>
-    <div class="banner-text">
-     <h4><%= @article.title %>
+<div class="container">
+  <%= link_to "Back to articles", categories_path(@article.category.id) %>
+</div>
+<div class="article-banner" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<%= @article.banner %>')">
+  <div class="text-container">
+    <div class="banner-text container">
+      <h4><%= @article.title %></h4>
+      <p>By: <%= @article.user.first_name %></p>
     </div>
   </div>
-  </div>
-<p>hallo thank you for reading this article hihi</p>
+</div>
+<div class="container">
+  <p>hallo thank you for reading this article hihi</p>
+</div>
