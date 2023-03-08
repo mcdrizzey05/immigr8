@@ -1,21 +1,77 @@
-.article-overlay {
-  background: black;
-  background-size:100%;
-  height: 200px;
-  position: relative;
-  opacity: .5;
+.article-content {
+  padding: 5px;
+  margin: 10px;
+  background-color: white;
+  border: 2px solid #032033;
+  border-radius: 5px;
 }
 
-.article-banner {
-  background-size:100%;
-  height: 200px;
+.back-to-link {
+  text-decoration: none;
+  color: black;
+  font-size: small;
+}
+
+.article-header {
   position: relative;
 }
 
-.banner-text {
-  position:absolute;
-  bottom:0;
-  left:0;
-  margin: 5px;
-  color: #FFFFFF;
+.article-title {
+  padding: 5px;
+}
+
+.article-buttons {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  vertical-align: middle;
+}
+
+.fa-padding {
+  padding: 5px;
+}
+
+.fa-bigger {
+  font-size: x-large;
+  color: #7FC8F8;
+}
+
+.message-icon {
+  display: inline-block;
+  transform: scale(.9);
+  padding-top: 5px;
+}
+
+.fa-biggish {
+  font-size: 24px;
+  color: #7FC8F8;
+}
+
+.article-text {
+  padding: 5px;
+}
+
+.back-to-btn {
+  padding: 5px;
+  margin: 6px;
+}
+
+.article-content h4 {
+  color: #032033;
+}
+
+.article-content h5 {
+  font-size: small;
+  color: #032033;
+}
+
+.article-content p {
+  font-size: small;
+  color: #032033;
+}
+
+.article-content h3 {
+  font-size: medium;
+  padding-top: 30px;
+  color: #032033;
 }
