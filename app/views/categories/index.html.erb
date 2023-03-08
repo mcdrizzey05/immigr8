@@ -1,11 +1,15 @@
 <div class="container">
-    <ul class="category-cards">
       <% @categories.each do |category| %>
-      <li><%= link_to category.title, category_path(category)%></li>
+        <%= link_to category_path(category), class:"text-decoration-none text-reset" do %>
+          <div class="category-card-wrapper">
+              <div class="category-card-inner mb-4">
+                <p class="category-title"><%= category.title %></p>
+                <p class="category-subtext"><%= "read the articles" %></p>
+              </div>
+          </div>
+        <% end %>
       <% end %>
-    </ul>
 
-    <%= render "shared/categorycard" %>
 
   <p><%= link_to  "Add new category", new_category_path %></p>
 </div>

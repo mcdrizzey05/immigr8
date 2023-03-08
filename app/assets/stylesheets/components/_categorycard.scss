@@ -1,14 +1,20 @@
-.card_3 {
+.category-card-inner {
   width: 340px;
   height: 130px;
   border: 3px solid #032033;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
+  position: relative;
+  max-width: 400px;
+  margin: 60px auto;
+  box-shadow: -10px -10px 0 -3px white, -10px -10px #032033,
+              -20px -20px 0 -3px white, -20px -20px #032033,
 }
 
 .category-title {
   font-size: medium;
   font-weight: bold;
+  color: #032033;
   padding-top: 60px;
   padding-left: 20px;
   text-align: left;
@@ -18,6 +24,7 @@
 .category-subtext {
   padding-left: 20px;
   font-size: small;
+  color: #032033;
 }
 
 // .card_2 {
