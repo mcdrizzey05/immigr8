@@ -12,6 +12,8 @@ category_1 = Category.create(title: 'Test-Category',
   category_1.save
 
 user_1 = User.create(email: 'test@test.com',
+  first_name: 'Alina',
+  last_name: 'Bich',
   username: 'test_user',
   location: 'Berlin',
   password: '123456')
@@ -29,6 +31,8 @@ user_1 = User.create(email: 'test@test.com',
     category_2.save
 
   user_2 = User.create(email: 'lalala@test.com',
+    first_name: 'Andreia',
+    last_name: 'MC',
     username: 'test--lala',
     location: 'Berlin',
     password: '123456')
