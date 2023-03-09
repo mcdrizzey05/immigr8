@@ -16,7 +16,9 @@
       <div class="article-buttons">
         <% if @article.user == current_user %>
           <span class="message-icon">
-            <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
+            <%= link_to edit_article_path do %>
+              <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
+            <% end %>
           </span>
           <%= link_to article_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
             <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
