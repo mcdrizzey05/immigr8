@@ -5,4 +5,7 @@ class Article < ApplicationRecord
   has_many :comments
 
   validates :title, :content, presence: true
+
+  include PgSearch::Model
+  multisearchable against: [:title, :content]
 end

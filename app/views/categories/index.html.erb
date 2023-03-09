@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="searchbar-container"><%= render "shared/searchbar" %></div><br>
       <% @categories.each do |category| %>
         <%= link_to category_path(category), class:"text-decoration-none text-reset" do %>
           <div class="category-card-wrapper">
