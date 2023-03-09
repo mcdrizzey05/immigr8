@@ -1,7 +1,11 @@
 <div class="container">
   <div class="back-to-btn">
     <i class="fa-solid fa-arrow-left"></i>
-    <%= link_to "Back to articles", categories_path(@article.category.id), class: "back-to-link" %>
+    <% if @article.user == current_user %>
+      <%= link_to "Back to my articles", articles_path, class: "back-to-link" %>
+    <% else %>
+      <%= link_to "Back to articles", categories_path(@article.category.id), class: "back-to-link" %>
+    <% end %>
   </div>
   <div class="article-content">
     <div class="article-header">
@@ -10,10 +14,17 @@
         <h5>By: <%= @article.user.first_name %></h5>
       </div>
       <div class="article-buttons">
-        <span class="message-icon">
-          <i class="fa-regular fa-message fa-padding fa-biggish"></i>
-        </span>
-        <i class="fa-regular fa-star fa-2x fa-padding fa-bigger"></i>
+        <% if @article.user == current_user %>
+          <span class="message-icon">
+            <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
+          </span>
+          <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
+        <% else %>
+          <span class="message-icon">
+            <i class="fa-regular fa-message fa-padding fa-biggish"></i>
+          </span>
+          <i class="fa-regular fa-star fa-2x fa-padding fa-bigger"></i>
+        <% end %>
       </div>
     </div>
     <div class="article-text">
