@@ -1,19 +1,20 @@
 <div class="container">
   <div class="back-to-btn">
-    <i class="fa-solid fa-arrow-left"></i>
-    <%= link_to "Back to categories", categories_path, class: "back-to-link" %>
+    <i class="fa-solid fa-arrow-left" style="color:#032033"></i>
+    <%= link_to "Back to categories", categories_path, class: "back-to-link", style:"color:#032033" %>
   </div>
 
   <div class="categories-articles-container">
-    <div class="category-description">
-      <h3><%= @category.title %> </h3>
-        <p> <%= @category.description %> </p>
+    <div class="category-description-card">
+      <p class="category-description-title"><%= @category.title %> </p>
+        <p class="category-description"> <%= @category.description %> </p>
     </div>
 
         <% @articles.each do |article| %>
         <%= link_to category_article_path(article), class:"text-decoration-none text-reset" do %>
           <div class="category-article-card">
-            <h3> <%= article.title %> <h3>
+            <p class="category-article-title"> <%= article.title %> </p>
+            <p class="category-article-author"> by <%= article.user.first_name %> </p>
           </div>
           <% end %>
         <% end %>
