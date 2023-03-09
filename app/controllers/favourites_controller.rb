@@ -1,5 +1,5 @@
 class FavouritesController < ApplicationController
-  before_action :set_user, only: ['new', 'destroy']
+  before_action :set_user, only: ['new']
 
   def index
     @favourites = current_user.favourites

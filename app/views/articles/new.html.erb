@@ -3,6 +3,11 @@
         <%= simple_form_for([@category, @article])  do |f| %>
           <%= f.input :title, label: 'Article title: ' %>
           <%= f.input :content, as: :text, label: 'Article content:' %>
+          <% if params[:category_id].present? %>
+            <%= f.input :category_id, collection: Category.all, include_blank: false, selected: @article.category_id || params[:category_id] %>
+          <% else %>
+            <%= f.input :category_id, collection: Category.all, include_blank: true %>
+           <% end %>
           <%# <%= f.input :photos, as: :file, input_html: { multiple: true } # we will have to add that later %>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>

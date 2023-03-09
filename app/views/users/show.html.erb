@@ -17,37 +17,41 @@
           <%= link_to user_articles_path do %>
             <i class="fa-regular fa-file-lines fa-xl other-icon"></i></i>
            <% end %>
+           <%= link_to favourites_path do %>
+            <i class="fa-regular fa-star fa-xl other-icon"></i></i>
+           <% end %>
         </div>
-    </div>
+      </div>
 
 
 
-  <div class="user-content">
-    <div class="row">
-      <div class="column">
-        <div class="column-header">
-          <p>Full Name</p>
-        </div>
-        <div class="column-text">
-          <p><%= @user.first_name  %> <%= @user.last_name %></p>
-        </div>
-        <div class="column-header">
-          <p>Username</p>
-        </div>
-        <div class="column-text">
-          <p><%= @user.username  %></p>
-        </div>
-        <div class="column-header">
-          <p>Email address</p>
-        </div>
-        <div class="column-text">
-          <p><%= @user.email  %></p>
-        </div>
-        <div class="column-header">
-          <p>Location</p>
-        </div>
-        <div class="column-text">
-          <p><%= @user.location%></p></p>
+    <div class="user-content">
+      <div class="row">
+        <div class="column">
+          <div class="column-header">
+            <p>Full Name</p>
+          </div>
+          <div class="column-text">
+            <p><%= @user.first_name  %> <%= @user.last_name %></p>
+          </div>
+          <div class="column-header">
+            <p>Username</p>
+          </div>
+          <div class="column-text">
+            <p><%= @user.username  %></p>
+          </div>
+          <div class="column-header">
+            <p>Email address</p>
+          </div>
+          <div class="column-text">
+            <p><%= @user.email  %></p>
+          </div>
+          <div class="column-header">
+            <p>Location</p>
+          </div>
+          <div class="column-text">
+            <p><%= @user.location%></p></p>
+          </div>
         </div>
       </div>
     </div>
