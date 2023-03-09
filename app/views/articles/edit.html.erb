@@ -1,0 +1,19 @@
+
+
+<div class="container">
+  <div class="article-content">
+    <div class="article-header">
+      <div class="article-title">
+        <h4><%= @article.title %></h4>
+      </div>
+      <div class="article-text">
+        <%= form_with model: @article do |f| %>
+          <%= f.text_area :content, placeholder: "f.content", class: "form-class", cols: 30, rows: 10 %>
+            <div class="form-article-submit">
+              <%= f.submit class: 'form-article-button' %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
