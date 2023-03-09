@@ -4,6 +4,11 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+
+    # user_query = params[:query]
+    # if user_query.present?
+    #   @categories = @categories.search(user_query)
+    # end
   end
 
   def new
