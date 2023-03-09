@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :articles, only: ['destroy', 'edit', 'update', 'index', 'show'] do
     resources :favourites, only: ['create', 'destroy']
   end
-  resources :favourites, only: ['index', 'update', 'show']
+  resources :favourites, only: ['index', 'update', 'show', 'destroy']
 
 
 

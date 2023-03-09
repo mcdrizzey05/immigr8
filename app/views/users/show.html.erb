@@ -1,6 +1,10 @@
 <div class="container">
   <div class="profile-picture">
-   <%= image_tag(@user.photo, class: "profile-image") %>
+    <% if current_user.photo? %>
+      <%= image_tag(@current_user.photo, class: "profile-image") %>
+    <% else %>
+      <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="profile-image">
+    <% end %>
   </div>
 
   <div class="user-box">
@@ -10,7 +14,7 @@
           <%= link_to edit_user_registration_path do %>
            <i class="fa-regular fa-pen-to-square fa-xl user-icon"></i>
           <% end %>
-          <%= link_to articles_path do %>
+          <%= link_to user_articles_path do %>
             <i class="fa-regular fa-file-lines fa-xl other-icon"></i></i>
            <% end %>
         </div>
