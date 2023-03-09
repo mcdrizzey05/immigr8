@@ -26,7 +26,9 @@
             <i class="fa-regular fa-message fa-padding fa-biggish"></i>
           </span>
           <%= simple_form_for [@article, @article.favourites.new] do |f| %>
-          <%= f.button :submit, label: '<i class="fa-regular fa-star fa-2x fa-padding fa-bigger"></i>' %>
+            <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger" do %>
+              <i></i>
+            <% end %>
           <% end %>
         <% end %>
       </div>

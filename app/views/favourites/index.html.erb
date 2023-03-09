@@ -1,3 +1,30 @@
-<% @favourites.each do |favourite| %>
-<%= favourite.article_id %>
-  <% end %>
+<div class="container">
+  <div class="profile-picture">
+    <% if current_user.photo? %>
+      <%= image_tag(@user.photo, class: "profile-image") %>
+    <% else %>
+      <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="profile-image">
+    <% end %>
+  </div>
+
+
+  <div class="user-box">
+    <div class="user-header">
+      <h1> <%= current_user.first_name %>'s Favourite Articles</h1>
+    </div>
+
+    <div class="user-content">
+      <% @favourites.each do |favourite| %>
+        <li class="article-list">
+          <ul>
+            <%= link_to favourite.article.title, article_path(favourite.article.id) %>
+              <span class="edit-icon">
+              <%= link_to favourites_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
+              <% end %>
+              </span>
+          </ul>
+        </li>
+      <% end %>
+    </div>
+  </div>

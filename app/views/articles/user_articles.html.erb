@@ -1,7 +1,12 @@
 <div class="container">
   <div class="profile-picture">
-   <%= image_tag(current_user.photo, class: "profile-image") %>
+    <% if current_user.photo? %>
+      <%= image_tag(@user.photo, class: "profile-image") %>
+    <% else %>
+      <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="profile-image">
+    <% end %>
   </div>
+
 
   <div class="user-box">
     <div class="user-header">
