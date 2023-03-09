@@ -18,12 +18,16 @@
           <span class="message-icon">
             <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
           </span>
-          <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
+          <%= link_to article_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
+          <% end %>
         <% else %>
           <span class="message-icon">
             <i class="fa-regular fa-message fa-padding fa-biggish"></i>
           </span>
-          <i class="fa-regular fa-star fa-2x fa-padding fa-bigger"></i>
+          <%= simple_form_for [@article, @article.favourites.new] do |f| %>
+          <%= f.button :submit, label: '<i class="fa-regular fa-star fa-2x fa-padding fa-bigger"></i>' %>
+          <% end %>
         <% end %>
       </div>
     </div>

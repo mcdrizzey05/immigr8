@@ -3,7 +3,12 @@ class ArticlesController < ApplicationController
   before_action :set_user, only: ['new', 'create']
 
   def index
+    @articles = Article.all
+  end
+
+  def user_articles
     @articles = current_user.articles
+    render 'user_articles'
   end
 
   def new
@@ -24,6 +29,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @favourite = Favourite.new
   end
 
   def edit
@@ -35,8 +41,9 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    @article = Article.find(params[:id])
     @article.destroy
-    redirect_to user_path(current_user)
+    redirect_to articles_path, status: :see_other
   end
 
   private
