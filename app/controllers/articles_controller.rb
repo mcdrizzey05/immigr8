@@ -12,7 +12,8 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @category = Category.find(params[:category_id])
+    # @category = Category.find(params[:category_id])
+    # @article = Article.new
     @article = Article.new
   end
 
