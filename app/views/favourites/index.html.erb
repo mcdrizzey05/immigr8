@@ -19,7 +19,7 @@
           <ul>
             <%= link_to favourite.article.title, article_path(favourite.article.id) %>
               <span class="edit-icon">
-              <%= link_to favourites_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <%= link_to favourite_delete_path(favourite), method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                   <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
               <% end %>
               </span>
