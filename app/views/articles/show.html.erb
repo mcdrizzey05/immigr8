@@ -1,11 +1,11 @@
 <div class="container">
   <div class="back-to-btn">
     <i class="fa-solid fa-arrow-left"></i>
-    <% if @article.user == current_user %>
-      <%= link_to "Back to my articles", articles_path, class: "back-to-link" %>
-    <% else %>
-      <%= link_to "Back to articles", categories_path(@article.category.id), class: "back-to-link" %>
-    <% end %>
+    <%# <% if @article.user == current_user %>
+      <%# <%= link_to "Back to my articles", articles_path, class: "back-to-link" %>
+    <%# <% else %>
+      <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
+    <%# <% end %>
   </div>
   <div class="article-content">
     <div class="article-header">

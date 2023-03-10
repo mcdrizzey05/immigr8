@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-lg navbar-lewagon navbar-light bg-light d-flex">
+<div class="navbar navbar-expand-lg navbar-lewagon navbar-light bg-white d-flex">
   <div class="container-fluid">
     <!-- Toggle button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler toggler-position" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -9,23 +9,23 @@
        <a href="/" id="logo"><h1>Immigr8</h1></a>
      </div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse collapse-bg collapse-style" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <li class="nav-item active nav-item-style">
             <%= link_to "Home", categories_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item nav-item-style">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item nav-item-style">
             <%= link_to "Articles", new_category_article_path(:category_id), class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdow nav-item-style">
             <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
           </li>
         <% else %>
-          <li class="nav-item">
+          <li class="nav-item nav-item-style">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
@@ -47,7 +47,7 @@
             height="25"
             alt="Portrait of Alina"
             loading="lazy"
-          />
+          >
         </a>
       </div>
     </div>
