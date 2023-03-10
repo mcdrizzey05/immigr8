@@ -1,0 +1,23 @@
+
+.card {
+  width: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-card {
+  display: grid;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card-body h5{
+  font-size: larger;
+  font-weight: bolder;
+
+}
+.card-body p{
+  text-align: justify;
+}
