@@ -1,8 +1,22 @@
-<div class="container mt-5">
-  <h4>Add article</h4>
+<div class="container">
+  <div class="back-to-btn">
+      <i class="fa-solid fa-arrow-left"></i>
+      <% if @article.user == current_user %>
+        <%# <%= link_to "Back to my articles", articles_path, class: "back-to-link" %>
+      <% else %>
+        <%= link_to "Back to categories", categories_path, class: "back-to-link" %>
+      <% end %>
+  </div>
+
+  <div class="article-content">
+    <div class="article-header">
+      <div class="article-title">
+        <h4>Add a new article</h4>
+      </div>
+      <div class="new-article-form">
         <%= simple_form_for([@category, @article])  do |f| %>
-          <%= f.input :title, label: 'Article title: ' %>
-          <%= f.input :content, as: :text, label: 'Article content:' %>
+          <%= f.input :title, label: 'Article title: ', placeholder: 'Enter your title here', class: 'form-title-class' %>
+          <%= f.text_area :content, placeholder: "Enter your content here", class: "form-class", cols: 30, rows: 10 %>
           <% if params[:category_id].present? %>
             <%= f.input :category_id, collection: Category.all, include_blank: false, selected: @article.category_id || params[:category_id] %>
           <% else %>
@@ -11,5 +25,7 @@
           <%# <%= f.input :photos, as: :file, input_html: { multiple: true } # we will have to add that later %>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>
-    <br>
+      </div>
+    </div>
+  </div>
 </div>
