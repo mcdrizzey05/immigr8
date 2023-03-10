@@ -21,13 +21,14 @@
       <div class="d-row">
         <%= simple_form_for :search, url: articles_path, method: :get do |f| %>
         <div class="search-form-control form-group d-flex search-input">
+          <div><i class="fa-solid fa-magnifying-glass"></i></div>
           <%= form_with url: articles_path, method: :get, class: "d-flex" do  %>
             <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Search for..."
             %>
-            <%= submit_tag "Search", class: "btn btn-primary" %>
+            <%#= submit_tag "Search", class: "btn btn-primary" %>
           <% end %>
         </div>
        <% end %>
