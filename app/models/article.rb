@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :favourites
-  has_many :comments
+  has_many :favourites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :title, :content, presence: true
 
