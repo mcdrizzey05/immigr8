@@ -76,7 +76,7 @@ User.destroy_all
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.')
   category_8.save
 
-  category_9 = Category.create(title: 'Kindergarten & Schools',
+  category_9 = Category.create(title: 'Kindergarden & Schools',
     description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.')
   category_9.save
 
@@ -113,3 +113,45 @@ article_1 = Article.create(title: "German courses & classes in Germany",
     article_4.user = user_4
     article_4.category = category_7
     article_4.save
+
+  article_5 = Article.create(title: '10 Tips to help you learn German',
+    content: 'Lorem ipsum')
+
+    article_5.user = user_1
+    article_5.category = category_1
+    article_5.save
+
+  article_6 = Article.create(title: 'Learn German. Change your  Life',
+    content: 'Lorem ipsum hihi')
+
+    article_6.user = user_2
+    article_6.category = category_1
+    article_6.save
+
+  article_7 = Article.create(title: 'How to Germ',
+    content: 'Lorem ipsum')
+
+    article_7.user = user_3
+    article_7.category = category_1
+    article_7.save
+
+  article_8 = Article.create(title: 'German Language 101',
+    content: 'Lorem ipsum')
+
+    article_8.user = user_4
+    article_8.category = category_1
+    article_8.save
+
+  article_9 = Article.create(title: 'Finding a Vet',
+    content: 'Lorem ipsum')
+
+    article_9.user = user_4
+    article_9.category = category_2
+    article_9.save
+
+  article_10 = Article.create(title: 'Entering Germany with Your Pet',
+    content: 'Lorem ipsum')
+
+    article_10.user = user_3
+    article_10.category = category_2
+    article_10.save
