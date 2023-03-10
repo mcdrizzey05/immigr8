@@ -2,16 +2,17 @@
   <div class="row text-center ">
 
     <div class="d_flex py-5 px-5">
-      <% @articles.each do |article| %>
-        <%= link_to article_path(article.id), class:"mb-1 text-decoration-none text-reset" do %>
-          <div class="col card mb-4">
-            <div class="card-body">
-              <h5 class="card-title"><%= article.title %></h5>
-              <!--<p class="my-0"><%= article.content %></p>-->
-             </div>
-          </div>
+      <h1>Here are your search results for  '<%= @user_query %>': </h1><br>
+        <% @articles.each do |article| %>
+          <%= link_to article_path(article.id), class:"mb-1 text-decoration-none text-reset" do %>
+            <div class="col card mb-4">
+              <div class="card-body">
+                <h5 class="card-title"><%= article.title %></h5>
+                <!--<p class="my-0"><%= article.content %></p>-->
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
     </div>
   </div>
 </div>

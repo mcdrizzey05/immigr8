@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
 
-    user_query = params[:query]
-    if user_query.present?
-      @articles = @articles.search_by_title_and_content(user_query)
+    @user_query = params[:query]
+    if @user_query.present?
+      @articles = @articles.search_by_title_and_content(@user_query)
     end
   end
 
