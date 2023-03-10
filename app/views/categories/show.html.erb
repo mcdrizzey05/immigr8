@@ -6,7 +6,7 @@
 
   <div class="categories-articles-container">
     <div class="categories-add-article-btn">
-      <button class="add-article"><%= link_to "Add new article", new_category_article_path(@category), class: "add-article-text" %></button>
+      <button class="add-article"><%= link_to  "Add new article", new_category_article_path(@category) %></button>
     </div>
     <div class="category-description-card">
       <p class="category-description-title"><%= @category.title %> </p>
@@ -14,7 +14,7 @@
     </div>
 
         <% @articles.each do |article| %>
-        <%= link_to article_path(article), class:"text-decoration-none text-reset" do %>
+        <%= link_to category_article_path(@category, article), class:"text-decoration-none text-reset" do %>
           <div class="category-article-card">
             <p class="category-article-title"> <%= article.title %> </p>
             <p class="category-article-author"> by <%= article.user.first_name %> </p>

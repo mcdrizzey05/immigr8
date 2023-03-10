@@ -1,16 +1,37 @@
-<div class="box">
+<%# <div class="box">
   <div class="container-searchbar">
     <div class="d-row">
       <div class="searchbar d-flex">
         <div><i class="fa-solid fa-magnifying-glass"></i></div>
           <%= form_with url: articles_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query,
+            <%#= text_field_tag :query,
                       params[:query],
                       class: "form-control",
                       placeholder: "Search for..." %>
-            <% submit_tag "Search", class: "btn btn-primary" %>
+            <%# submit_tag "Search", class: "btn btn-primary" %>
+          <%# end %>
+        <!--</div>
+    </div>
+  </div>
+</div>-->
+
+<div class="box">
+  <div class="justify-content-center">
+    <div class="container-searchbar">
+      <div class="d-row">
+        <%= simple_form_for :search, url: articles_path, method: :get do |f| %>
+        <div class="search-form-control form-group d-flex search-input">
+          <%= form_with url: articles_path, method: :get, class: "d-flex" do  %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search for..."
+            %>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
           <% end %>
         </div>
+       <% end %>
+      </div>
     </div>
   </div>
 </div>
