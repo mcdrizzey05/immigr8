@@ -14,7 +14,7 @@
     </div>
 
         <% @articles.each do |article| %>
-        <%= link_to category_article_path(article), class:"text-decoration-none text-reset" do %>
+        <%= link_to article_path(article), class:"text-decoration-none text-reset" do %>
           <div class="category-article-card">
             <p class="category-article-title"> <%= article.title %> </p>
             <p class="category-article-author"> by <%= article.user.first_name %> </p>
