@@ -1,11 +1,8 @@
 .category-description-card {
-  background-color: white;
   // border-radius: 10px;
   // padding: 20px;
   // margin: 20px;
-  border: 3px solid #032033;
-  border-radius: 10px;
-  background-color: white;
+  border-radius: 5px;
   color: #032033;
   position: relative;
   // max-width: 800px;
@@ -17,7 +14,8 @@
 }
 
 .category-description-title {
-  font-size: 50px;
+  font-size: 36px;
+  font-family: Abhaya Libre;
   font-weight: bold;
   letter-spacing: 3px;
   color: #032033;
@@ -28,42 +26,49 @@
 
 .category-description {
   margin: 20px;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
+  padding-bottom: 15px;
 }
 
 .category-article-card {
-  padding: 50px 5px 5px 5px;
-  margin: 20px;
   background-color: white;
   border: 3px solid #032033;
-  border-radius: 10px;
-  min-height: 150px;
-  height: auto;
+  border-radius: 5px;
+  margin: 40px auto 15px auto;
+  max-width: 65%;
+  box-shadow: -8px -8px 0 -3px white, -8px -8px #032033,
+              -16px -16px 0 -3px white, -16px -16px #032033,
+
 }
 
 .category-article-title {
   font-size: large;
-  padding: 20px 0px 0px 20px;
   color: #032033;
   margin: 0px;
+  padding: 15px 15px 0px 15px;
 }
 
 .category-article-author {
   font-size: small;
+  padding-bottom: 15px;
   color: #032033;
   padding-left: 20px;
   margin: auto;
 }
 
 .categories-articles-container {
-  padding: 5px;
-  margin: 10px;
+  margin: 0px 10px 10px 10px;
 }
 
 .add-article {
-  margin: 10px;
+  padding: 5px 10px;
+  margin: 0 0 10px 0;
   background-color: white;
-  border: 2px solid #032033;
+  border: 1px solid #032033;
   border-radius: 5px;
+}
+
+.add-article-text {
+  text-decoration: none;
 }
