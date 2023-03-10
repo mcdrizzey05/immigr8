@@ -13,7 +13,7 @@
         <p class="category-description"> <%= @category.description %> </p>
     </div>
 
-        <% @articles.each do |article| %>
+        <% @category.articles.each do |article| %>
         <%= link_to category_article_path(article), class:"text-decoration-none text-reset" do %>
           <div class="category-article-card">
             <p class="category-article-title"> <%= article.title %> </p>
