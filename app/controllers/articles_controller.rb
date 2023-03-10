@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    @article.category = Category.find(params[:category_id])
+    @article.category = Category.find(params[:article][:category_id])
     if @article.save
       redirect_to category_article_path(@article.category, @article)
     else
