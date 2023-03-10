@@ -7,6 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # user seeds
+Article.destroy_all
+Category.destroy_all
+User.destroy_all
+
+
   user_1 = User.create(email: 'alina@immigr8.de',
     first_name: 'Alina',
     last_name: 'Bich',
@@ -79,8 +84,8 @@
 
 article_1 = Article.create(title: "German courses & classes in Germany",
   content: "Are you interested in learning German or improving your German language skills? Browse our list of language schools offering German classes for expatriates and international companies in Germany. As well as general German courses & private tuition for individuals, they also offer specialised courses such as business German and group lessons for employees.")
-    article_1.user_id = user_1.id
-    article_1.category_id = category_1.id
+    article_1.user = user_1
+    article_1.category = category_1
     article_1.save
 
   article_2 = Article.create(title: "How To Register Your Dog in Germany",
@@ -91,20 +96,20 @@ article_1 = Article.create(title: "German courses & classes in Germany",
       In Germany, the laws vary with each municipality (Gemeinde). In Berlin, for example, your dog needs to be registered within a month of ownership or birth. Or immediately after you move to the city. In other cases, you can only register your puppy for dog tax when it is three months old or older. So, in other words: Get your dog licensed as soon as possible. The worst that could happen is that you would have to wait until your dog is of age, but that's still better than potentially being accused of tax fraud, right?
       How can I register my dog?
       The most common ways to register a dog are either online or in person. The easiest option is to fill out the online form provided by the official website of your municipality. You can send out the form via e-mail or to the postal address and within one or two weeks, you should receive the dog license tag (Hundesteuermarke) by mail. If you are in a hurry, the quickest alternative to get your dog licensed is in person. For this option, you need to refer to your local citizens' office (Bürgeramt). (Note that you might have to make an appointment after all.) Once you've filled out all the documents, you will receive your dogs' license tag on site.")
-    article_2.user_id = user_2.id
-    article_2.category_id = category_2.id
+    article_2.user = user_2
+    article_2.category = category_2
     article_2.save
 
   article_3 = Article.create(title: 'How To Open a Bank Account',
     content: 'Lorem ipsum')
 
-    article_3.user_id = user_3.id
-    article_3.category_id = category_8.id
+    article_3.user = user_3
+    article_3.category = category_8
     article_3.save
 
   article_4 = Article.create(title: 'Tips for Public Transport in Germany',
     content: 'Lorem ipsum')
 
-    article_4.user_id = user_4.id
-    article_4.category_id = category_7.id
+    article_4.user = user_4
+    article_4.category = category_7
     article_4.save
