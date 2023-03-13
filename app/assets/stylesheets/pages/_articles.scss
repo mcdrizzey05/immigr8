@@ -35,12 +35,13 @@
 }
 
 .comment-content {
-  padding: 5px;
+  width: 100%;
 }
 
 .comment-card {
   display: flex;
   flex-direction: row;
+  padding-left: 8px;
 }
 
 .comment-content-time {
@@ -57,8 +58,37 @@
   color: #032033;
 }
 
+.add-comment-section {
+  display: flex;
+  border: 1px solid #7FC8F8;
+  margin: 5px;
+}
+
+.add-comment-content {
+  width: 100%;
+  margin: 5px;
+  border: none;
+  font-size: small;
+}
+
+.comment-icon-submit {
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
+.comment-icon-submit i {
+  font-size: x-large;
+  color: #7FC8F8;
+}
+
+.comment-icon-button {
+  background-color: white;
+  border: none;
+}
+
 .user-picture-section {
   padding-right: 5px;
+  padding-top: 2px;
 }
 
 .user-picture {
@@ -66,7 +96,6 @@
   border: 1px solid #032033;
   border-radius: 100px;
 }
-
 
 .article-buttons {
   position: absolute;
