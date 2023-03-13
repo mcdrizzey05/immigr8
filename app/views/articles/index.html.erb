@@ -1,8 +1,10 @@
-<div class="container-card px-4">
+<div class="container-card center">
   <div class="row text-center ">
 
     <div class="d_flex py-5 px-5">
-      <h1>Here are your search results for  '<%= @user_query %>': </h1><br>
+    <div class="card-search py-4 px-4">
+      <h2>Here are your search results for <br> '<%= @user_query %>': </h2>
+      </div>
         <% @articles.each do |article| %>
           <%= link_to article_path(article.id), class:"mb-1 text-decoration-none text-reset" do %>
             <div class="col card mb-4">
