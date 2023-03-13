@@ -1,7 +1,7 @@
 <div class="container">
   <div class="profile-picture">
-    <% if current_user.photo? %>
-      <%= image_tag(@current_user.photo, class: "profile-image") %>
+    <% if @user.photo? %>
+      <%= image_tag(@user.photo, class: "profile-image") %>
     <% else %>
       <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="profile-image">
     <% end %>
@@ -9,51 +9,24 @@
 
   <div class="user-box">
     <div class="user-header">
-     <h1>Welcome, <%= @user.first_name %>!</h1>
+     <h1><%= @user.first_name %>'s profile</h1>
+     <h5><%= @user.username %></h5>
         <div class="user-button">
-          <%= link_to edit_user_registration_path do %>
-           <i class="fa-regular fa-pen-to-square fa-xl user-icon"></i>
-          <% end %>
-          <%= link_to user_articles_path do %>
-            <i class="fa-regular fa-file-lines fa-xl other-icon"></i></i>
-           <% end %>
-           <%= link_to favourites_path do %>
-            <i class="fa-regular fa-star fa-xl other-icon"></i></i>
-           <% end %>
+        <p>User points: <%= @user.points %></p>
         </div>
       </div>
 
 
 
     <div class="user-content">
-      <div class="row">
-        <div class="column">
-          <div class="column-header">
-            <p>Full Name</p>
-          </div>
-          <div class="column-text">
-            <p><%= @user.first_name  %> <%= @user.last_name %></p>
-          </div>
-          <div class="column-header">
-            <p>Username</p>
-          </div>
-          <div class="column-text">
-            <p><%= @user.username  %></p>
-          </div>
-          <div class="column-header">
-            <p>Email address</p>
-          </div>
-          <div class="column-text">
-            <p><%= @user.email  %></p>
-          </div>
-          <div class="column-header">
-            <p>Location</p>
-          </div>
-          <div class="column-text">
-            <p><%= @user.location%></p></p>
-          </div>
-        </div>
+      <div class="user-articles">
+        <%= @user.first_name %>'s articles
       </div>
+        <% @user.articles.each do |article| %>
+          <li class="article-list">
+            <ul><%= link_to article.title, article_path(article.id)%></ul>
+          </li>
+        <% end %>
     </div>
   </div>
 </div>
