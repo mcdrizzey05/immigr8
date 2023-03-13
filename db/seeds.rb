@@ -155,3 +155,15 @@ article_1 = Article.create(title: "German courses & classes in Germany",
     article_10.user = user_3
     article_10.category = category_2
     article_10.save
+
+    comment_1 = Comment.create(content: "Super useful, love it!")
+
+    comment_1.user = user_1
+    comment_1.article = article_2
+    comment_1.save
+
+    comment_2 = Comment.create(content: "I just moved to Berlin and I had the exact same experience. I wish I had known this sooner!")
+
+    comment_2.user = user_2
+    comment_2.article = article_2
+    comment_2.save
