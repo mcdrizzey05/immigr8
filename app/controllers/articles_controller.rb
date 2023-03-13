@@ -26,6 +26,8 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     @article.category = Category.find(params[:article][:category_id])
     if @article.save
+      current_user.points = current_user.points += 10
+      current_user.save
       redirect_to category_article_path(@article.category, @article)
     else
       render new
