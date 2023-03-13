@@ -78,3 +78,6 @@ group :test do
 end
 
 gem "pg_search"
+
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'deepl-rb', require: 'deepl'

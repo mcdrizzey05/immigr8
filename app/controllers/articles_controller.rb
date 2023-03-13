@@ -53,6 +53,19 @@ class ArticlesController < ApplicationController
     redirect_to articles_path, status: :see_other
   end
 
+  def translate
+    @article = Article.find(params[:article_id])
+    target_language = params[:target_language]
+    translated_article = @article.dup
+    translated_article.title = DeepL.translate(@article.title, "EN", target_language)
+    translated_article.content = DeepL.translate(@article.content, "EN", target_language)
+    render partial: "articles/cardcontent", locals: { article: translated_article }, formats: [:html], status: :ok
+    # article_title = params[:article_title]
+    # article_content = params[:article_content]
+    # target_language = params[:target_language]
+    # translated_text = DeepL.translate([article_title, article_content], "EN", target_language)
+  end
+
   private
 
   def set_article

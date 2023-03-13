@@ -98,6 +98,7 @@ GEM
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    deepl-rb (2.5.3)
     devise (4.9.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -261,6 +262,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  deepl-rb
   devise
   dotenv-rails
   font-awesome-sass (~> 6.1)

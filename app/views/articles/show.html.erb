@@ -7,37 +7,8 @@
       <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
     <%# <% end %>
   </div>
-  <div class="article-content">
-    <div class="article-header">
-      <div class="article-title">
-        <h4><%= @article.title %></h4>
-        <h5>By: <%= @article.user.first_name %></h5>
-      </div>
-      <div class="article-buttons">
-        <% if @article.user == current_user %>
-          <span class="message-icon">
-            <%= link_to edit_article_path do %>
-              <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
-            <% end %>
-          </span>
-          <%= link_to article_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
-          <% end %>
-        <% else %>
-          <span class="message-icon">
-            <i class="fa-regular fa-message fa-padding fa-biggish"></i>
-          </span>
-          <%= simple_form_for [@article, @article.favourites.new] do |f| %>
-            <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger" do %>
-              <i></i>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
+  <div data-controller="translate">
+    <div><%= render "shared/languagepicker" %></div>
+    <div data-translate-target="card"><%= render "articles/cardcontent", article: @article %></div>
     </div>
-    <div class="article-text">
-      <h3>Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></h3>
-        <p><%= @article.content %></p>
-    </div>
-   </div>
 </div>

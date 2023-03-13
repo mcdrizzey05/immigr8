@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :articles, only: ['new', 'create', 'show']
   end
   resources :articles, only: ['destroy', 'edit', 'update', 'index', 'show'] do
+    get :translate
     resources :favourites, only: ['create']
   end
 
