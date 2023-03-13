@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: ['edit', 'update', 'show']
+  before_action :set_user, only: ['edit', 'update', 'show', 'index']
   before_action :set_category, only: ['edit']
+
+  def index
+    @user = current_user
+  end
 
   def show
     @user = User.find(params[:id])
@@ -8,7 +12,7 @@ class UsersController < ApplicationController
 
   def edit
   end
-  
+
   def update
     @user.update(user_params)
     redirect_to users_path

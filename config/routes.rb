@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete 'favourites/:id', to: 'favourites#destroy', as: 'favourite_delete'
   delete 'comments/:id', to: 'comments#destroy', as: 'comment_delete'
   # Jenni: how to inegrate favourites, messages and chatrooms here?
-  resources :users, only: ['show']
+  resources :users, only: ['show', 'index']
   resources :favourites, only: ['index', 'update', 'show']
   resources :categories do
     resources :articles, only: ['new', 'create', 'show']
