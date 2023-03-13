@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   # Jenni: how to inegrate favourites, messages and chatrooms here?
   resources :users, only: ['show']
   resources :favourites, only: ['index', 'update', 'show']
+  resources :comments, only: ['destroy']
   resources :categories do
     resources :articles, only: ['new', 'create', 'show']
   end
   resources :articles, only: ['destroy', 'edit', 'update', 'index', 'show'] do
     resources :favourites, only: ['create']
+    resources :comments, only: ['create']
   end
 
 
