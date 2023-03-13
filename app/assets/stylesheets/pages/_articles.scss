@@ -6,6 +6,14 @@
   border-radius: 5px;
 }
 
+.comment-section {
+  padding: 5px;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid #032033;
+  border-radius: 5px;
+}
+
 .back-to-link {
   text-decoration: none;
   color: black;
@@ -20,6 +28,45 @@
   padding: 5px;
   color: #032033;
 }
+
+.comment-section-title {
+  padding: 5px;
+  color: #032033;
+}
+
+.comment-content {
+  padding: 5px;
+}
+
+.comment-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-content-time {
+  padding-left: 5px;
+}
+
+.comment-content-time p {
+  font-size: small;
+  color: #032033;
+}
+
+.comment-timestamp {
+  font-size: x-small;
+  color: #032033;
+}
+
+.user-picture-section {
+  padding-right: 5px;
+}
+
+.user-picture {
+  width: 30px;
+  border: 1px solid #032033;
+  border-radius: 100px;
+}
+
 
 .article-buttons {
   position: absolute;
