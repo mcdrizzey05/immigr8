@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'articles/user_articles', to: 'articles#user_articles', as: 'user_articles'
   delete 'favourites/:id', to: 'favourites#destroy', as: 'favourite_delete'
   delete 'comments/:id', to: 'comments#destroy', as: 'comment_delete'
+  get 'articles/new', to: 'articles#new', as: 'article_new'
+  post 'articles', to: 'articles#create'
   # Jenni: how to inegrate favourites, messages and chatrooms here?
   resources :users, only: ['show', 'index']
   resources :favourites, only: ['index', 'update', 'show']
