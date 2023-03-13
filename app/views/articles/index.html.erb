@@ -3,7 +3,7 @@
 
     <div class="d_flex py-5 px-5">
     <div class="card-search py-4 px-4">
-      <h2>Here are your search results for <br> '<%= @user_query %>': </h2>
+      <h2>Here are your search results for <br> <u>'<%= @user_query %>'</u>: </h2>
       </div>
         <% @articles.each do |article| %>
           <%= link_to article_path(article.id), class:"mb-1 text-decoration-none text-reset" do %>
