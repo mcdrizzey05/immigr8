@@ -6,6 +6,13 @@
   border-radius: 5px;
 }
 
+.comment-section {
+  padding: 5px;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid #032033;
+  border-radius: 5px;
+}
 
 .back-to-link {
   text-decoration: none;
@@ -20,6 +27,74 @@
 .article-title {
   padding: 25px 85px 25px 25px;
   color: #032033;
+}
+
+.comment-section-title {
+  padding: 5px;
+  color: #032033;
+}
+
+.comment-content {
+  width: 100%;
+}
+
+.comment-card {
+  display: flex;
+  flex-direction: row;
+  padding-left: 8px;
+}
+
+.comment-content-time {
+  padding-left: 5px;
+}
+
+.comment-content-time p {
+  font-size: small;
+  color: #032033;
+}
+
+.comment-timestamp {
+  font-size: x-small;
+  color: #032033;
+}
+
+.add-comment-section {
+  display: flex;
+  border: 1px solid #7FC8F8;
+  margin: 5px;
+}
+
+.add-comment-content {
+  width: 100%;
+  margin: 5px;
+  border: none;
+  font-size: small;
+}
+
+.comment-icon-submit {
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
+.comment-icon-submit i {
+  font-size: x-large;
+  color: #7FC8F8;
+}
+
+.comment-icon-button {
+  background-color: white;
+  border: none;
+}
+
+.user-picture-section {
+  padding-right: 5px;
+  padding-top: 2px;
+}
+
+.user-picture {
+  width: 30px;
+  border: 1px solid #032033;
+  border-radius: 100px;
 }
 
 .article-buttons {

@@ -19,22 +19,32 @@
   font-size: large;
   font-weight: bolder;
   color: #032033;
-  padding-top: 60px;
-  padding-left: 20px;
+  padding-top: 40px;
+  padding-left: 75px;
   text-align: left;
   margin-bottom: 0;
 }
 
 .category-subtext {
-  padding-left: 20px;
+  padding-left: 75px;
   font-size: small;
   color: #032033;
 }
 
-// .card_2 {
-//   width: 340px;
-//   height: 130px;
-//   border: 3px solid black;
-//   border-radius: 5px;
-//   background-color: white;
+// .learning-german-icon {
+//   display: inline-block;
+//   color: #032033;
+//   position: absolute;
+//   right: 50px;
+//   top: 40px;
+//   width: 40px;
 // }
+
+.learning-german-icon {
+  display: inline-block;
+  color: #032033;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  width: 40px;
+}
