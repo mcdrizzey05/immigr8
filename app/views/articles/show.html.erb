@@ -11,7 +11,7 @@
     <div class="article-header">
       <div class="article-title">
         <h4><%= @article.title %></h4>
-        <h5>By: <%= @article.user.first_name %></h5>
+        <h5>By <%= @article.user.first_name %></h5>
       </div>
       <div class="article-buttons">
         <% if @article.user == current_user %>
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="article-text">
-      <h3>Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></h3>
+      <h3 class="posted-on-tag">Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></h3>
         <p><%= @article.content %></p>
     </div>
   </div>
