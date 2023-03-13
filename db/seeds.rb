@@ -42,6 +42,14 @@ User.destroy_all
     location: 'Berlin',
     password: '123456')
 
+  user_5 = User.create(email: 'capybara@immigr8.de',
+    first_name: 'Capybara',
+    last_name: 'Capybara',
+    username: 'capybara',
+    location: 'Capybara',
+    password: '123456',
+    points: 0)
+
   user_5 = User.create(email: 'vhs@immigr8.de',
     first_name: 'Volker',
     last_name: 'Schule',
@@ -175,7 +183,7 @@ article_1 = Article.create(title: "German courses & classes in Berlin",
 
     An expat-friendly bank lets you open an account anyway.
     The requirements to open a bank account are the same for most banks:
-    
+
     A proof of German residency (your Meldebescheinigung). Some banks let you open an account without one.
     A proof of identity (your passport or national ID, and sometimes a residence permit)
     Some banks require a minimum income or financial history in Germany. Other banks require permanent residence in Germany. For example, DKB often rejects foreigners.48 Some online banks only support certain passports,49 or ask for a residence permit.
@@ -962,7 +970,7 @@ article_1 = Article.create(title: "German courses & classes in Berlin",
     article_34.user = user_4
     article_34.category = category_8
     article_34.save
-    
+
 article_15 = Article.create(title: 'Hospitals in Germany',
     content: "There are around 2.000 hospitals (Krankenhäuser) in Germany, all offering a high standard of medical care. Most hospitals will accept all
     patients, regardless of the kind of health insurance you have. Smaller hospitals may be specialised in only a few different disciplines, while larger
