@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to articles_path, status: :see_other
+    redirect_to article_path, status: :see_other
   end
 
   private
