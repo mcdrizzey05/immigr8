@@ -1,17 +1,21 @@
 <div class="container">
+  <br>
   <div class="container-card center">
     <div class="row text-center">
         <div class="card-search">
           <h2>Here are your search results for <br> <u>'<%= @user_query %>'</u>: </h2>
         </div>
           <% @articles.each do |article| %>
-            <%= link_to article_path(article.id), class:"mb-1 text-decoration-none text-reset" do %>
-              <div class="col card mb-4">
+            <%= link_to article_path(article.id), class:"text-decoration-none text-reset" do %>
+              <%# <div class="col card mb-4"> %>
                 <div class="card-body">
-                  <h5 class="card-title"><%= article.title %></h5>
+                  <br>
+                    <h5 class="card-search"><%= article.title %></h5>
+                    <%# <h5 class="card-search"><%= article.username %></h5> %>
+                  <br>
                   <!--<p class="my-0"><%= article.content %></p>-->
                 </div>
-              </div>
+              <%# </div> %>
             <% end %>
           <% end %>
     </div>
