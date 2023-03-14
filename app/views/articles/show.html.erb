@@ -37,20 +37,45 @@
       </div>
 
 
-      <div class="add-comment-section">
-        <%= simple_form_for [@article, @article.comments.new]  do |f| %>
-          <%= f.input :content, label: false, placeholder: 'Enter your comment', class: 'comments-class' %>
-          <%= f.submit class: "btn btn-primary" %>
-            <%= form_with model: [@article, @article.comments.new], class: "add-comment-section" do |form| %>
-              <%= form.text_field :content, label: false, placeholder: "Enter your comment here", class: "add-comment-content" %>
-                <div class="comment-icon-submit">
-                  <button type="submit" title="Add your comment" class="comment-icon-button">
-                    <i class="fa-regular fa-paper-plane"></i>
-                  </button>
-                </div>
+    <div class="comment-section">
+    <div class="comment-section-title">
+      <h4>Comments</h4>
+    </div>
+    <div class="comment-content">
+      <% @article.comments.each do |article| %>
+        <div class="comment-card">
+          <div class="user-picture-section">
+            <% if article.user.photo? %>
+              <%= image_tag(article.user.photo, class: "user-picture") %>
+            <% else %>
+              <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="user-picture">
             <% end %>
-        <% end %>
-      </div>
+          </div>
+          <div class="comment-content-time">
+            <div class="comment-timestamp">
+              <%= article.user.username %>, <%= article.created_at.strftime("%B %d, %Y") %>
+              <% if article.user == current_user %>
+              - <%= link_to "delete", comment_delete_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              <% end %>
+            </div>
+            <p><%= article.content %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+      <%= form_with model: [@article, @article.comments.new], class: "add-comment-section" do |form| %>
+        <%= form.text_field :content, label: false, placeholder: "Enter your comment here", class: "add-comment-content" %>
+          <div class="comment-icon-submit">
+            <button type="submit" title="Add your comment" class="comment-icon-button">
+              <i class="fa-regular fa-paper-plane"></i>
+            </button>
+          </div>
+      <% end %>
+    </div>
+
+    <%# <div class="article-text">
+      <p>Posted on: <%= @article.created_at.strftime("%B %d, %Y")</p> %>
     </div>
   </div>
 
