@@ -1,15 +1,15 @@
-<div class="container">
+<div class="container" data-controller="translate">
     <div class="back-to-btn">
       <i class="fa-solid fa-arrow-left"></i>
       <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
+      <div><%= render "shared/languagepicker" %></div>
     </div>
 
     <div class="article-content">
       <div class="article-header">
         <div class="article-title">
-          <div data-controller="translate">
-            <div><%= render "shared/languagepicker" %></div>
-              <div data-translate-target="card"><%= render "articles/cardcontent", article: @article %></div>
+          <div>
+            <div data-translate-target="card"><%= render "articles/cardcontent", article: @article %></div>
           </div>
         </div>
 
@@ -51,16 +51,11 @@
             <% end %>
         <% end %>
       </div>
-
-    <%# <div class="article-text">
-      <p>Posted on: <%= @article.created_at.strftime("%B %d, %Y")</p> %>
     </div>
-
-    </div>
-
-    <div class="article-text">
-      <p>Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></p>
-    </div>
-
   </div>
+
+  <div class="article-text">
+  <p>Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></p>
+  </div>
+
 </div>
