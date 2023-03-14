@@ -7,11 +7,11 @@
 }
 
 .box {
-  background-color:$white;
+  background-color: $white;
   margin: 30px auto 0 auto;
   border-radius: 30px;
   display: flex;
-  padding: 2px;
+  padding: 6px;
   width: 60%;
   border: 3px solid black;
 }
@@ -29,5 +29,5 @@
   border: none;
   outline: none;
   padding-left: 15px;
-  width: 100%;
+  width: 95%;
 }
