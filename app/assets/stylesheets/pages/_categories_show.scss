@@ -8,9 +8,6 @@
   border: 3px solid #032033;
 }
 
-.categories-add-article-btn {
-  justify-content: flex-end;
-}
 
 .category-description-title {
   font-size: 24px;
@@ -63,4 +60,11 @@
 
 .add-article-text {
   text-decoration: none;
+}
+
+.category-title p {
+  font-size: medium;
+  text-decoration: none;
+  font-weight: 100;
+  font-family: helvetica;
 }

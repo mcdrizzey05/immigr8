@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_path, status: :see_other
+    redirect_to user_articles_path, status: :see_other
   end
 
   def translate

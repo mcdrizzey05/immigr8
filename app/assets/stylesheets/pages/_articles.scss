@@ -153,8 +153,17 @@
 
 .language-picker {
   float: right;
+  vertical-align: middle;
 }
 
+.translate-button {
+  color: #032033;
+  background-color: white;
+  border: 1px solid #032033;
+  font-size: smaller;
+  margin: auto;
+  border-radius: 2px;
+}
 
 .article-content h4 {
   color: #032033;
@@ -190,4 +199,8 @@
 
 .form-control-search {
   border: none;
+}
+
+.article-id-input {
+  margin: auto;
 }
