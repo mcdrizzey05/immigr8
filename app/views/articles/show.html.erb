@@ -1,18 +1,16 @@
-<div class="container">
+<div class="container" data-controller="translate">
     <div class="back-to-btn">
-      <i class="fa-solid fa-arrow-left"></i>
-      <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
+      <div class="back-to-text">
+        <i class="fa-solid fa-arrow-left"></i>
+        <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
+      </div>
+      <div class="language-picker">
+        <%= render "shared/languagepicker" %>
+      </div>
     </div>
 
     <div class="article-content">
       <div class="article-header">
-        <div class="article-title">
-          <div data-controller="translate">
-            <div><%= render "shared/languagepicker" %></div>
-              <div data-translate-target="card"><%= render "articles/cardcontent", article: @article %></div>
-          </div>
-        </div>
-
         <div class="article-buttons">
           <% if @article.user == current_user %>
             <span class="message-icon">
@@ -35,7 +33,10 @@
           <% end %>
         </div>
       </div>
-
+      <div data-translate-target="card">
+        <%= render "articles/cardcontent", article: @article %>
+      </div>
+    </div>
 
     <div class="comment-section">
     <div class="comment-section-title">
@@ -73,16 +74,5 @@
           </div>
       <% end %>
     </div>
-
-    <%# <div class="article-text">
-      <p>Posted on: <%= @article.created_at.strftime("%B %d, %Y")</p> %>
-    </div>
-
-    </div>
-
-    <div class="article-text">
-      <p>Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></p>
-    </div>
-
   </div>
 </div>

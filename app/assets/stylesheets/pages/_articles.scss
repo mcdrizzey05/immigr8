@@ -20,12 +20,16 @@
   font-size: small;
 }
 
+.back-to-text {
+  display: inline-block;
+}
+
 .article-header {
   position: relative;
 }
 
 .article-title {
-  padding: 25px 85px 25px 15px;
+  padding: 12px 85px 12px 15px;
   color: #032033;
 }
 
@@ -99,7 +103,7 @@
 
 .article-buttons {
   position: absolute;
-  top: 25px;
+  top: 12px;
   right: 25px;
   vertical-align: middle;
   padding-left: 15px;
@@ -128,13 +132,22 @@
 }
 
 .article-text {
-  padding: 25px;
+  padding: 12px;
 }
 
 .back-to-btn {
-  padding: 5px;
+  padding: 5px 5px 30px 5px;
   margin: 6px;
 }
+
+.back-to-text {
+  float: left;
+}
+
+.language-picker {
+  float: right;
+}
+
 
 .article-content h4 {
   color: #032033;
@@ -171,7 +184,3 @@
 .form-control-search {
   border: none;
 }
-
-// .translation {
-//   display: none;
-// }
