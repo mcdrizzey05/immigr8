@@ -3,9 +3,6 @@
       <%# <% DeepL.languages.each do |language| %>
       <%# <%= language.name %>
       <%# <% end %>
-
-  <p> Pick a language: </p>
-
   <form action="<%= article_translate_path(@article) %>" id="translate-form" data-translate-target="form" data-action="submit->translate#fetch">
       <input type="hidden" id="article-id-input" value="<%= @article.id %>">
       <select id="target-language-select" data-translate-target="select">
