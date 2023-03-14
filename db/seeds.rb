@@ -1223,3 +1223,4 @@ article_15 = Article.create(title: 'Hospitals in Germany',
     article_22.user = user_6
     article_22.category = category_3
     article_22.save
+
