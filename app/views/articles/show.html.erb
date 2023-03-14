@@ -11,17 +11,19 @@
 
     <div class="article-content">
       <div class="article-header">
-        <div class="article-buttons">
-          <% if @article.user == current_user %>
-            <span class="message-icon">
-              <%= link_to edit_article_path do %>
-                <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
-              <% end %>
+        <h4><%= @article.title %></h4>
+        <h5>By: <%= link_to @article.user.first_name, user_path(@article.user.id) %></h5>
+          <div class="article-buttons">
+            <% if @article.user == current_user %>
+              <span class="message-icon">
+                <%= link_to edit_article_path do %>
+                  <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
+                <% end %>
               </span>
               <%= link_to article_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                 <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
               <% end %>
-          <% else %>
+            <% else %>
               <span class="message-icon">
                 <i class="fa-regular fa-message fa-padding fa-biggish"></i>
               </span>
@@ -54,7 +56,7 @@
           </div>
           <div class="comment-content-time">
             <div class="comment-timestamp">
-              <%= article.user.username %>, <%= article.created_at.strftime("%B %d, %Y") %>
+              <%= link_to article.user.username, user_path %>, <%= article.created_at.strftime("%B %d, %Y") %>
               <% if article.user == current_user %>
               - <%= link_to "delete", comment_delete_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
               <% end %>
