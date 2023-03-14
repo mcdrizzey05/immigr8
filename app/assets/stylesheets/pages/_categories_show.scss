@@ -5,9 +5,7 @@
   color: #032033;
   background-color: #ffffff;
   position: relative;
-  max-width: 800px;
-  margin: auto;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 3px solid #032033;
 }
 
 .categories-add-article-btn {
@@ -37,7 +35,6 @@
   border: 3px solid #032033;
   border-radius: 5px;
   margin: 40px auto 15px auto;
-  max-width: 65%;
   // box-shadow: -8px -8px 0 -3px white, -8px -8px #032033,
   //             -16px -16px 0 -3px white, -16px -16px #032033,
 
