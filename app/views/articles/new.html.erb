@@ -15,8 +15,8 @@
       </div>
       <div class="new-article-form">
         <%= simple_form_for([@category, @article])  do |f| %>
-          <%= f.input :title, label: 'Article title: ', placeholder: 'Enter your title here', class: 'form-title-class' %>
-          <%= f.text_area :content, placeholder: "Enter your content here", class: "form-class", cols: 30, rows: 10 %>
+          <%= f.input :title, label: false, placeholder: 'Enter your title here', class: 'form-title-class' %>
+          <%= f.text_area :content, label: false, placeholder: 'Enter your content here', class: 'form-title-class', cols: 30, rows: 10 %>
           <% if params[:category_id].present? %>
             <%= f.input :category_id, collection: Category.all, include_blank: false, selected: @article.category_id || params[:category_id] %>
           <% else %>
