@@ -12,7 +12,12 @@
      <h1><%= @user.first_name %>'s profile</h1>
      <h5><%= @user.username %></h5>
         <div class="user-button">
-        <p>User points: <%= @user.points %></p>
+        <p>User points:
+          <% if @user.points = 0 %>
+            0
+          <% else %>
+            <%= @user.points %></p>
+          <% end %>
         </div>
       </div>
 
