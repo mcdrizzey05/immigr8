@@ -25,7 +25,9 @@
               <% end %>
           <% else %>
               <span class="message-icon">
-                <i class="fa-regular fa-message fa-padding fa-biggish"></i>
+                <%= link_to chatroom_path(@chatroom) do %>
+                  <i class="fa-regular fa-message fa-padding fa-biggish"></i>
+                <% end %>
               </span>
               <%= simple_form_for [@article, @article.favourites.new] do |f| %>
                 <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger" do %>

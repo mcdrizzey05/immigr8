@@ -35,6 +35,17 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @favourite = Favourite.new
+    user = @article.user
+    my_chatrooms = current_user.chatrooms
+    chatrooms = my_chatrooms.select { |chatroom| chatroom.users.include? user }
+    if chatrooms.empty?
+      @chatroom = Chatroom.new
+      @chatroom.users << current_user
+      @chatroom.users << user
+      @chatroom.save!
+    else
+      @chatroom = chatrooms.first
+    end
   end
 
   def edit
