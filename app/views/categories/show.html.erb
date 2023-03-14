@@ -17,7 +17,7 @@
         <%= link_to category_article_path(@category, article), class:"text-decoration-none text-reset" do %>
           <div class="category-article-card">
             <p class="category-article-title"> <%= article.title %> </p>
-            <p class="category-article-author"> by <%= article.user.first_name %> </p>
+            <p class="category-article-author"> by <%= article.user.first_name %> <%= article.user.last_name %></p>
           </div>
           <% end %>
         <% end %>
