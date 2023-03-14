@@ -11,13 +11,13 @@
                   "fa-solid fa-children fa-2xl"]  %>
       <% @categories.each_with_index do |category, index| %>
         <%= link_to category_path(category), class:"text-decoration-none text-reset" do %>
-          <div class="category-card-wrapper">
-              <div class="category-card-inner mb-4">
-                <span class="learning-german-icon">
+          <div class="category-card-wrapper-index">
+              <div class="category-card-inner-index mb-4">
+                <span class="learning-german-icon-index">
                   <i class="<%= symbols[index] %>"></i>
                 </span>
-                <p class="category-title"><%= category.title %></p>
-                <p class="category-subtext"><%= "read the articles" %></p>
+                <p class="category-title-index"><%= category.title %></p>
+                <p class="category-subtext-index"><%= "read the articles" %></p>
               </div>
           </div>
         <% end %>

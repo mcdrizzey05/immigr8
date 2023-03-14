@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :articles, dependent: :destroy
   has_many :favourites, dependent: :destroy
+  has_many :chatrooms_users
+  has_many :chatrooms, through: :chatrooms_users, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true
   validates :first_name, :last_name, presence: true
