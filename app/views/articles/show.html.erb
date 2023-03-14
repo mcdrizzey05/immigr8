@@ -1,7 +1,7 @@
 <div class="container">
     <div class="back-to-btn">
       <i class="fa-solid fa-arrow-left"></i>
-        <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
+      <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
     </div>
 
     <div class="article-content">
@@ -9,35 +9,48 @@
         <div class="article-title">
           <div data-controller="translate">
             <div><%= render "shared/languagepicker" %></div>
-            <div data-translate-target="card"><%= render "articles/cardcontent", article: @article %></div>
           </div>
+        </div>
 
-            <div class="article-buttons">
-              <% if @article.user == current_user %>
-                <span class="message-icon">
-                  <%= link_to edit_article_path do %>
-                    <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
-                  <% end %>
-                </span>
-                <%= link_to article_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                  <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
-                <% end %>
-              <% else %>
-                <span class="message-icon">
-                  <i class="fa-regular fa-message fa-padding fa-biggish"></i>
-                </span>
-                <%= simple_form_for [@article, @article.favourites.new] do |f| %>
-                  <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger" do %>
-                    <i></i>
-                  <% end %>
-                <% end %>
+        <div class="article-buttons">
+          <% if @article.user == current_user %>
+            <span class="message-icon">
+              <%= link_to edit_article_path do %>
+                <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
               <% end %>
-          </div>
+              </span>
+              <%= link_to article_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
+              <% end %>
+          <% else %>
+              <span class="message-icon">
+                <i class="fa-regular fa-message fa-padding fa-biggish"></i>
+              </span>
+              <%= simple_form_for [@article, @article.favourites.new] do |f| %>
+                <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger" do %>
+                  <i></i>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
-      <div class="article-text">
-        <p>Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></p>
+      <div data-translate-target="card"><%= render "articles/cardcontent", article: @article %></div>
+
+      <div class="add-comment-section">
+        <%= simple_form_for [@article, @article.comments.new]  do |f| %>
+          <%= f.input :content, label: false, placeholder: 'Enter your comment', class: 'comments-class' %>
+          <%= f.submit class: "btn btn-primary" %>
+            <%= form_with model: [@article, @article.comments.new], class: "add-comment-section" do |form| %>
+              <%= form.text_field :content, label: false, placeholder: "Enter your comment here", class: "add-comment-content" %>
+                <div class="comment-icon-submit">
+                  <button type="submit" title="Add your comment" class="comment-icon-button">
+                    <i class="fa-regular fa-paper-plane"></i>
+                  </button>
+                </div>
+            <% end %>
+        <% end %>
       </div>
+    </div>
   </div>
 </div>
