@@ -5,14 +5,9 @@
   </div>
 
   <div class="categories-articles-container">
-    <div class="categories-add-article-btn">
-      <button class="add-article"><%= link_to  "Add new article", new_category_article_path(@category) %></button>
+    <div class="category-title">
+      <%= @category.title %>
     </div>
-    <div class="category-description-card">
-      <p class="category-description-title"><%= @category.title %> </p>
-        <p class="category-description"> <%= @category.description %> </p>
-    </div>
-
         <% @category.articles.each do |article| %>
         <%= link_to category_article_path(@category, article), class:"text-decoration-none text-reset" do %>
           <div class="category-article-card">
@@ -22,5 +17,8 @@
           <% end %>
         <% end %>
           <%# <%= image_tag(@article.banner, class: "enter-your-class-here") %>
+          <div class="categories-add-article-btn">
+      <button class="add-article"><%= link_to  "Add new article", new_category_article_path(@category) %></button>
+    </div>
   </div>
 </div>
