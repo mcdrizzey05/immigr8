@@ -1,7 +1,3 @@
-// .flex-container {
-//   display: flex;
-// }
-
 .justify-content-center{
   width: 100%;
 }
@@ -20,7 +16,6 @@
   border: 3px solid black;
 }
 
-
 .searchbar {
   i {
     font-size: 20px;
@@ -30,9 +25,9 @@
   position: relative;
 }
 
-
-.form-control {
+.form-control-search {
   border: none;
   outline: none;
   padding-left: 15px;
+  width: 100%;
 }

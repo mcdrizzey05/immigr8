@@ -5,20 +5,16 @@
       <%= link_to "Back to categories", categories_path, class: "back-to-link" %>
     </div>
   <br>
-    <%# <div class="container-card center"> %>
-      <%# <div class="text-center"> %>
-          <div class="card-search">
-            <h2>Here are your search results for <br> <u>'<%= @user_query %>'</u>: </h2>
+    <div class="card-search">
+      <h2>Here are your search results for <br> <u>'<%= @user_query %>'</u>: </h2>
+    </div>
+      <% @articles.each do |article| %>
+        <%= link_to article_path(article.id), class:"text-decoration-none text-reset" do %>
+          <div class="category-article-card">
+            <p class="category-article-title"> <%= article.title %> </p>
+            <p class="category-article-author"> by <%= article.user.first_name %> <%= article.user.last_name %></p>
           </div>
-            <% @articles.each do |article| %>
-              <%= link_to article_path(article.id), class:"text-decoration-none text-reset" do %>
-                  <div class="card-body">
-                    <br>
-                      <h5 class="card-search"><%= article.title %></h5>
-                  </div>
-              <% end %>
-            <% end %>
-      <%# </div> %>
-    <%# </div> %>
+        <% end %>
+      <% end %>
   <br>
 </div>
