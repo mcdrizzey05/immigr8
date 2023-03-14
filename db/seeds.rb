@@ -26,21 +26,24 @@ User.destroy_all
     last_name: 'de Lucas',
     username: 'andreia11',
     location: 'Berlin',
-    password: '123456')
+    password: '123456',
+    photo: "https://avatars.githubusercontent.com/u/121885895?v=4.jpg")
 
   user_3 = User.create(email: 'mc@immigr8.de',
     first_name: 'Marie Claude',
     last_name: 'Leveille',
     username: 'mc_maus',
     location: 'Berlin',
-    password: '123456')
+    password: '123456',
+    photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673210155/dlar11dnztiwodpgpdxp.jpg")
 
   user_4 = User.create(email: 'jenni@immigr8.de',
     first_name: 'Jennifer',
     last_name: 'Braun',
     username: 'jenni11',
     location: 'Berlin',
-    password: '123456')
+    password: '123456',
+    photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673126909/pa9szeqfushvix7lcgmz.jpg")
 
   user_5 = User.create(email: 'capybara@immigr8.de',
     first_name: 'Capybara',
