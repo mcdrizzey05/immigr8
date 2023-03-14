@@ -1,20 +1,19 @@
-<div class="container-card center">
-  <div class="row text-center ">
-
-    <div class="d_flex py-5 px-5">
-    <div class="card-search py-4 px-4">
-      <h2>Here are your search results for <br> <u>'<%= @user_query %>'</u>: </h2>
-      </div>
-        <% @articles.each do |article| %>
-          <%= link_to article_path(article.id), class:"mb-1 text-decoration-none text-reset" do %>
-            <div class="col card mb-4">
-              <div class="card-body">
-                <h5 class="card-title"><%= article.title %></h5>
-                <!--<p class="my-0"><%= article.content %></p>-->
+<div class="container">
+  <div class="container-card center">
+    <div class="row text-center">
+        <div class="card-search">
+          <h2>Here are your search results for <br> <u>'<%= @user_query %>'</u>: </h2>
+        </div>
+          <% @articles.each do |article| %>
+            <%= link_to article_path(article.id), class:"mb-1 text-decoration-none text-reset" do %>
+              <div class="col card mb-4">
+                <div class="card-body">
+                  <h5 class="card-title"><%= article.title %></h5>
+                  <!--<p class="my-0"><%= article.content %></p>-->
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
     </div>
   </div>
 </div>
