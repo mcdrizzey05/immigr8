@@ -1,80 +1,43 @@
 <div class="container">
-  <div class="back-to-btn">
-    <i class="fa-solid fa-arrow-left"></i>
-    <%# <% if @article.user == current_user %>
-      <%# <%= link_to "Back to my articles", articles_path, class: "back-to-link" %>
-    <%# <% else %>
-      <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
-    <%# <% end %>
-  </div>
-  <div class="article-content">
-    <div class="article-header">
-      <div class="article-title">
-        <h4><%= @article.title %></h4>
-        <h5>By <%= link_to @article.user.first_name, user_path(@article.user.id) %></h5>
-      </div>
-      <div class="article-buttons">
-        <% if @article.user == current_user %>
-          <span class="message-icon">
-            <%= link_to edit_article_path do %>
-              <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
-            <% end %>
-          </span>
-          <%= link_to article_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
-          <% end %>
-        <% else %>
-          <span class="message-icon">
-            <i class="fa-regular fa-message fa-padding fa-biggish"></i>
-          </span>
-          <%= simple_form_for [@article, @article.favourites.new] do |f| %>
-            <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger" do %>
-              <i></i>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
+    <div class="back-to-btn">
+      <i class="fa-solid fa-arrow-left"></i>
+        <%= link_to "Back to articles", category_path(@article.category), class: "back-to-link" %>
     </div>
-    <div class="article-text">
-      <h3 class="posted-on-tag">Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></h3>
-        <p><%= @article.content %></p>
-    </div>
-  </div>
 
-  <div class="comment-section">
-    <div class="comment-section-title">
-      <h4>Comments</h4>
-    </div>
-    <div class="comment-content">
-      <% @article.comments.each do |article| %>
-        <div class="comment-card">
-          <div class="user-picture-section">
-            <% if article.user.photo? %>
-              <%= image_tag(article.user.photo, class: "user-picture") %>
-            <% else %>
-              <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="user-picture">
-            <% end %>
+    <div class="article-content">
+      <div class="article-header">
+        <div class="article-title">
+          <div data-controller="translate">
+            <div><%= render "shared/languagepicker" %></div>
+            <div data-translate-target="card"><%= render "articles/cardcontent", article: @article %></div>
           </div>
-          <div class="comment-content-time">
-            <div class="comment-timestamp">
-              <%= article.user.username %>, <%= article.created_at.strftime("%B %d, %Y") %>
-              <% if article.user == current_user %>
-              - <%= link_to "delete", comment_delete_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+            <div class="article-buttons">
+              <% if @article.user == current_user %>
+                <span class="message-icon">
+                  <%= link_to edit_article_path do %>
+                    <i class="fa-regular fa-pen-to-square fa-xl user-icon blue-icon"></i>
+                  <% end %>
+                </span>
+                <%= link_to article_path, method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
+                <% end %>
+              <% else %>
+                <span class="message-icon">
+                  <i class="fa-regular fa-message fa-padding fa-biggish"></i>
+                </span>
+                <%= simple_form_for [@article, @article.favourites.new] do |f| %>
+                  <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger" do %>
+                    <i></i>
+                  <% end %>
+                <% end %>
               <% end %>
-            </div>
-            <p><%= article.content %></p>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
 
-      <%= form_with model: [@article, @article.comments.new], class: "add-comment-section" do |form| %>
-        <%= form.text_field :content, label: false, placeholder: "Enter your comment here", class: "add-comment-content" %>
-          <div class="comment-icon-submit">
-            <button type="submit" title="Add your comment" class="comment-icon-button">
-              <i class="fa-regular fa-paper-plane"></i>
-            </button>
-          </div>
-      <% end %>
-    </div>
+      <div class="article-text">
+        <p>Posted on: <%= @article.created_at.strftime("%B %d, %Y") %></p>
+      </div>
+  </div>
 </div>
