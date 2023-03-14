@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: "categories#index"
   get 'articles/user_articles', to: 'articles#user_articles', as: 'user_articles'
   delete 'favourites/:id', to: 'favourites#destroy', as: 'favourite_delete'
+  delete 'comments/:id', to: 'comments#destroy', as: 'comment_delete'
+  get 'articles/new', to: 'articles#new', as: 'article_new'
+  post 'articles', to: 'articles#create'
   # Jenni: how to inegrate favourites, messages and chatrooms here?
-  resources :users, only: ['show']
+  resources :users, only: ['show', 'index']
   resources :favourites, only: ['index', 'update', 'show']
   resources :categories do
     resources :articles, only: ['new', 'create', 'show']
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
   resources :articles, only: ['destroy', 'edit', 'update', 'index', 'show'] do
     get :translate
     resources :favourites, only: ['create']
+    resources :comments, only: ['create']
   end
 
 

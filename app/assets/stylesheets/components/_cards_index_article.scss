@@ -1,10 +1,14 @@
 
 .card {
   width: 400px;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   flex-direction: column;
   justify-content: center;
+  border: 3px solid #032033;
+  background-color: white;
+  position: relative;
+  margin: 60px auto;
 }
 
 .container-card {
@@ -20,4 +24,14 @@
 }
 .card-body p{
   text-align: justify;
+}
+.card-search{
+   // border-radius: 10px;
+  border-radius: 5px;
+  color: #032033;
+  background-color: #FFFFFF;
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  border: 3px solid #032033;
 }

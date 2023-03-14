@@ -17,16 +17,16 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @category = Category.find(params[:category_id])
     @article = Article.new
   end
 
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    @article.category = Category.find(params[:article][:category_id])
-    if @article.save
-      redirect_to category_article_path(@article.category, @article)
+  if @article.save
+      current_user.points = current_user.points += 10
+      current_user.save
+      redirect_to article_path(@article.id)
     else
       render new
     end

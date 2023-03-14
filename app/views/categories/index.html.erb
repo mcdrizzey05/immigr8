@@ -1,9 +1,21 @@
 <div class="container">
   <div class="searchbar-container"><%= render "shared/searchbar" %></div><br>
-      <% @categories.each do |category| %>
+    <% symbols = ["fa-solid fa-graduation-cap fa-2xl",
+                  "fa-solid fa-dog fa-2xl",
+                  "fa-solid fa-stethoscope fa-2xl",
+                  "fa-solid fa-building-columns fa-2xl",
+                  "fa-solid fa-house-user fa-2xl",
+                  "fa-solid fa-pen-ruler fa-2xl",
+                  "fa-solid fa-bus-simple fa-2xl",
+                  "fa-solid fa-money-check-dollar fa-2xl",
+                  "fa-solid fa-children fa-2xl"]  %>
+      <% @categories.each_with_index do |category, index| %>
         <%= link_to category_path(category), class:"text-decoration-none text-reset" do %>
           <div class="category-card-wrapper">
               <div class="category-card-inner mb-4">
+                <span class="learning-german-icon">
+                  <i class="<%= symbols[index] %>"></i>
+                </span>
                 <p class="category-title"><%= category.title %></p>
                 <p class="category-subtext"><%= "read the articles" %></p>
               </div>
