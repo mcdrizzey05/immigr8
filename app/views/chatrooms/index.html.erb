@@ -1,12 +1,7 @@
 <div class="container">
-
-        <% @chatroom.message.each do |message| %>
-        <%= link_to chatroom_message_path(@chatroom, message), class:"text-decoration-none text-reset" do %>
-          <div class="category-message-card">
-            <p class="category-article-title"> <%= article.title %> </p>
-            <p class="category-article-author"> by <%= article.user.first_name %> </p>
-          <% end %>
-        <% end %>
-          <%# <%= image_tag(@article.banner, class: "enter-your-class-here") %>
-  </div>
+  <% current_user.chatrooms.each do |chatroom| %>
+    <div class="category-message-card">
+      <p><%= chatroom.filter_current_user(current_user).first.first_name %></p>
+    </div>
+  <% end %>
 </div>
