@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    if @article.save
+  if @article.save
       current_user.points = current_user.points += 10
       current_user.save
       redirect_to article_path(@article.id)
