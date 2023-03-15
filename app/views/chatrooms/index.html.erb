@@ -1,18 +1,25 @@
 <div class="container chat-index">
-  <div class="chatrooms-messages-container">
-  <% if current_user.chatrooms.empty? %>
-
-      <p class="message-no-chat"> You have no current messages 😞</p>
-  <% else %>
+  <div class="broader-chatrooms-container">
+  <i class="fa-solid fa-arrow-left" style="color:#032033"></i>
+    <%= link_to "Back to profile", users_path, class: "back-to-link", style:"color:#032033" %>
+    <div class="chatrooms-messages-container">
+      <% if current_user.chatrooms.empty? %>
+        <p class="message-no-chat"> You have no current messages 😞</p>
+      <% else %>
         <% current_user.chatrooms.each do |chatroom| %>
           <%= link_to chatroom, class:"text-decoration-none text-reset" do %>
             <div class="category-message-card">
               <p class="message-first-name">
-             Conversation with: <%= chatroom.filter_current_user(current_user).first.first_name%></p>
+                <% if chatroom.filter_current_user(current_user).first.photo? %>
+                  <%= image_tag(chatroom.filter_current_user(current_user).first.photo, class: "profile-image-chat") %>
+                <% else %>
+                  <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="profile-image-chat">
+                <% end %>
+              Conversation with: <%= chatroom.filter_current_user(current_user).first.first_name%></p>
             </div>
           <% end %>
         <% end %>
-  <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-</div>
-
