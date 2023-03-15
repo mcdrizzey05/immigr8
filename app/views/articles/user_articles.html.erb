@@ -22,7 +22,7 @@
               <%= link_to edit_article_path(article.id) do %>
                 <i class="fa-regular fa-pen-to-square fa-xl user-icon"></i>
               <% end %>
-              <%= link_to articles_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <%= link_to article_delete_path(article.id), method: :destroy, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                 <i class="fa-regular fa-trash-can fa-xl user-icon blue-icon"></i>
               <% end %>
             </span>
