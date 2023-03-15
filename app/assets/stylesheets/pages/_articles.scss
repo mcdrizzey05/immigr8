@@ -134,7 +134,13 @@
 
 .article-text {
   padding: 12px;
+  line-height: 2;
 }
+
+.article-content p {
+  font-size: medium !important;
+}
+
 
 .back-to-btn {
   padding: 5px 5px 10px 5px;
@@ -199,9 +205,10 @@
   height: 20px;
   vertical-align: middle;
   box-sizing: border-box;
-  margin-top: -2px;
+  margin-top: -1px;
   background: #032033;
   color: white;
+  line-height: 0;
 }
 
 .translate-form {
