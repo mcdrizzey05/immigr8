@@ -1,11 +1,12 @@
-<div class="chatrooms-messages-container">
-
-    <% current_user.chatrooms.each do |chatroom| %>
-      <%= link_to chatroom, class:"text-decoration-none text-reset" do %>
-        <div class="category-message-card">
-          <p class="message-first-name">
-          <%= chatroom.filter_current_user(current_user).first.first_name %></p>
-        </div>
+<div class="container chat-index">
+  <div class="chatrooms-messages-container">
+      <% current_user.chatrooms.each do |chatroom| %>
+        <%= link_to chatroom, class:"text-decoration-none text-reset" do %>
+          <div class="category-message-card">
+            <p class="message-first-name">
+            Conversation with: <%= chatroom.filter_current_user(current_user).first.first_name%></p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+  </div>
 </div>
