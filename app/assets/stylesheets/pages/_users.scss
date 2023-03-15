@@ -86,7 +86,7 @@
 
 .column-header {
   line-height: 0;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 2px;
   font-weight: 800;
   font-family: Helvetica, sans-serif;
@@ -105,4 +105,46 @@
 
 .user-logout{
   text-align: center;
+}
+
+.new-user {
+  font-size: medium;
+}
+
+.badges {
+  margin-top: 0;
+  padding-top: 0;
+  display: flex;
+}
+
+.badges p {
+  font-size: x-large;
+}
+
+.badges-title {
+  margin-bottom: 2px;
+}
+
+.badge-align-first {
+  padding: 2px 2px 2px 0;
+}
+
+.badge-align-second {
+  padding: 2px;
+}
+
+.badge-align-third {
+  padding: 2px;
+}
+
+.badge-align-fourth {
+  padding: 2px;
+}
+
+.badge-align-fifth {
+  padding: 2px 4px 2px 2px;
+}
+
+.badge-align-sixth {
+  padding: 2px;
 }
