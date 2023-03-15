@@ -12,12 +12,30 @@
      <h1><%= @user.first_name %>'s profile</h1>
      <h5><%= @user.username %></h5>
         <div class="user-button">
-        <p>User points:
-          <% if @user.points = 0 %>
-            0
-          <% else %>
-            <%= @user.points %></p>
+        <p class="view-user-badges">User badges:</p>
+          <% if @user.points < 1 %>
+            <p class="new-user">👶 New user! No points yet.</p>
           <% end %>
+          <div class="badges">
+          <% if @user.points >= 10 %>
+            <p class="badge-align-first">🥉</p>
+          <% end %>
+          <% if @user.points >= 21 %>
+            <p class="badge-align-second">🥈</p>
+          <% end %>
+          <% if @user.points >= 41 %>
+            <p class="badge-align-third">🥇</p>
+          <% end %>
+          <% if @user.points >= 61 %>
+            <p class="badge-align-fourth">🏅</p>
+          <% end %>
+          <% if @user.points >= 101 %>
+            <p class="badge-align-fifth">🏆</p>
+          <% end %>
+          <% if @user.points >= 201 %>
+            <p class="badge-align-sixth">🏋🏼</p>
+          <% end %>
+          </div>
         </div>
       </div>
 

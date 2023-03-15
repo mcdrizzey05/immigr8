@@ -7,6 +7,9 @@
     <% end %>
   </div>
 
+  <div class="broader-user-box">
+    <i class="fa-solid fa-arrow-left" style="color:#032033"></i>
+    <%= link_to "Back to profile", users_path, class: "back-to-link", style:"color:#032033" %>
   <div class="user-box">
     <div class="user-header">
       <h1> <%= current_user.first_name %>'s Favourite Articles</h1>
@@ -26,5 +29,6 @@
           </li>
         <% end %>
     </div>
+  </div>
   </div>
 </div>
