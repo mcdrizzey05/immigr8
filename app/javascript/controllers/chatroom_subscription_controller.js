@@ -1,9 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
 import { createConsumer } from "@rails/actioncable"
-
+import Rails from "@rails/ujs"
 // Connects to data-controller="chatroom-subscription"
 export default class extends Controller {
-  static targets = ["messages"]
+  static targets = ["messages", "form"]
   static values = { chatroomId: Number }
 
   // connect() {
@@ -32,6 +32,10 @@ export default class extends Controller {
   resetForm(event) {
     const form = event.target
     form.reset()
+  }
+
+  submitForm () {
+    Rails.fire(this.formTarget, 'submit')
   }
 
   // private
