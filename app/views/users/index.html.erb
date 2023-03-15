@@ -10,7 +10,30 @@
     <div class="user-box">
       <div class="user-header">
       <h1>Welcome, <%= @user.first_name %>!</h1>
-      <p>Your user points: <%= @user.points %></p>
+        <p class="badges-title">Your badges:</p>
+          <% if current_user.points < 1 %>
+            <p class="new-user">👶 New user! No points yet.</p>
+          <% end %>
+          <div class="badges">
+          <% if current_user.points >= 10 %>
+            <p class="badge-align-first">🥉</p>
+          <% end %>
+          <% if current_user.points >= 21 %>
+            <p class="badge-align-second">🥈</p>
+          <% end %>
+          <% if current_user.points >= 41 %>
+            <p class="badge-align-third">🥇</p>
+          <% end %>
+          <% if current_user.points >= 61 %>
+            <p class="badge-align-fourth">🏅</p>
+          <% end %>
+          <% if current_user.points >= 101 %>
+            <p class="badge-align-fifth">🏆</p>
+          <% end %>
+          <% if current_user.points >= 201 %>
+            <p class="badge-align-sixth">🏋🏼</p>
+          <% end %>
+        </div>
           <div class="user-button">
             <%= link_to user_articles_path do %>
               <i class="fa-regular fa-file-lines fa-xl other-icon"></i></i>
