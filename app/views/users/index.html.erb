@@ -12,14 +12,14 @@
       <h1>Welcome, <%= @user.first_name %>!</h1>
       <p>Your user points: <%= @user.points %></p>
           <div class="user-button">
-            <%= link_to edit_user_registration_path do %>
-            <i class="fa-regular fa-pen-to-square fa-xl user-icon"></i>
-            <% end %>
             <%= link_to user_articles_path do %>
               <i class="fa-regular fa-file-lines fa-xl other-icon"></i></i>
             <% end %>
             <%= link_to favourites_path do %>
               <i class="fa-regular fa-bookmark fa-xl other-icon"></i></i>
+            <% end %>
+            <%= link_to edit_user_registration_path do %>
+            <i class="fa-solid fa-user-pen fa-xl user-icon"></i>
             <% end %>
           </div>
         </div>
