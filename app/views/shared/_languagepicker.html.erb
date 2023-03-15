@@ -6,6 +6,8 @@
   <form action="<%= article_translate_path(@article) %>" class="translate-form" data-translate-target="form" data-action="submit->translate#fetch">
       <input type="hidden" class="article-id-input" value="<%= @article.id %>">
       <select id="article-id-input" data-translate-target="select">
+        <option>Language</option>
+        <option value="BG">Bulgarian</option>
         <option value="BG">Bulgarian</option>
         <option value="CS">Czech</option>
         <option value="DA">Danish</option>
@@ -36,6 +38,6 @@
         <option value="UK">Ukrainian</option>
         <option value="ZH">Chinese</option>
       </select>
-      <button type="submit" class="translate-button">Translate</button>
+      <button type="submit" class="translate-button" id="submit-translate">Translate</button>
     </form>
 </div>
