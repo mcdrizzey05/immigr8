@@ -18,8 +18,8 @@ User.destroy_all
     username: 'alina_maus',
     location: 'Berlin',
     password: '123456',
-    photo: 'https://res.cloudinary.com/diafrrnkz/image/upload/v1678286693/Screenshot_2023-03-08_at_15.44.36_a9lg5d.png'
-  )
+    # photo: 'https://res.cloudinary.com/diafrrnkz/image/upload/v1678286693/Screenshot_2023-03-08_at_15.44.36_a9lg5d.png'
+    )
 
   user_2 = User.create(email: 'andreia@immigr8.de',
     first_name: 'Andreia',
@@ -27,7 +27,8 @@ User.destroy_all
     username: 'andreia11',
     location: 'Berlin',
     password: '123456',
-    photo: "https://avatars.githubusercontent.com/u/121885895?v=4.jpg")
+    # photo: "https://avatars.githubusercontent.com/u/121885895?v=4.jpg"
+  )
 
   user_3 = User.create(email: 'mc@immigr8.de',
     first_name: 'Marie Claude',
@@ -35,7 +36,8 @@ User.destroy_all
     username: 'mc_maus',
     location: 'Berlin',
     password: '123456',
-    photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673210155/dlar11dnztiwodpgpdxp.jpg")
+    # photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673210155/dlar11dnztiwodpgpdxp.jpg"
+  )
 
   user_4 = User.create(email: 'jenni@immigr8.de',
     first_name: 'Jennifer',
@@ -43,7 +45,8 @@ User.destroy_all
     username: 'jenni11',
     location: 'Berlin',
     password: '123456',
-    photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673126909/pa9szeqfushvix7lcgmz.jpg")
+    # photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673126909/pa9szeqfushvix7lcgmz.jpg"
+  )
 
   user_5 = User.create(email: 'capybara@immigr8.de',
     first_name: 'Capybara',
@@ -51,7 +54,7 @@ User.destroy_all
     username: 'capybara',
     location: 'Capybara',
     password: '123456',
-    points: 0)
+  )
 
   user_5 = User.create(email: 'vhs@immigr8.de',
     first_name: 'Volker',
@@ -1223,4 +1226,3 @@ article_15 = Article.create(title: 'Hospitals in Germany',
     article_22.user = user_6
     article_22.category = category_3
     article_22.save
-
