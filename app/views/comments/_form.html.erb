@@ -1,0 +1,13 @@
+<%= form_with model: [article, article.comments.new],
+  data: {
+    insert_in_list_target: "commentform",
+    action: "submit->insert-in-list#send"
+  },
+  class: "add-comment-section" do |form| %>
+  <%= form.text_field :content, label: false, placeholder: "Enter your comment here", class: "add-comment-content" %>
+    <div class="comment-icon-submit">
+      <button type="submit" title="Add your comment" class="comment-icon-button">
+        <i class="fa-regular fa-paper-plane"></i>
+      </button>
+    </div>
+<% end %>

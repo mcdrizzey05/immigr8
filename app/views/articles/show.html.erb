@@ -46,37 +46,18 @@
     <div class="comment-section-title">
       <h4>Comments</h4>
     </div>
-    <div class="comment-content">
-      <% @article.comments.each do |article| %>
-        <div class="comment-card">
-          <div class="user-picture-section">
-            <% if article.user.photo? %>
-              <%= image_tag(article.user.photo, class: "user-picture") %>
-            <% else %>
-              <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="user-picture">
-            <% end %>
-          </div>
-          <div class="comment-content-time">
-            <div class="comment-timestamp">
-              <%= link_to article.user.username, user_path %>, <%= article.created_at.strftime("%B %d, %Y") %>
-              <% if article.user == current_user %>
-              - <%= link_to "delete", comment_delete_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-              <% end %>
-            </div>
-            <p><%= article.content %></p>
-          </div>
-        </div>
-      <% end %>
+
+    <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
+      <div class="comment-content" data-insert-in-list-target="items">
+        <% @article.comments.each do |comment| %>
+          <%= render "articles/comment", comment: comment %>
+        <% end %>
+      </div>
+
+      <%# trying some ajax here %>
+
+      <%= render "comments/form", article: @article, comment: @article.comments.new  %>
     </div>
 
-      <%= form_with model: [@article, @article.comments.new], class: "add-comment-section" do |form| %>
-        <%= form.text_field :content, label: false, placeholder: "Enter your comment here", class: "add-comment-content" %>
-          <div class="comment-icon-submit">
-            <button type="submit" title="Add your comment" class="comment-icon-button">
-              <i class="fa-regular fa-paper-plane"></i>
-            </button>
-          </div>
-      <% end %>
-    </div>
   </div>
 </div>
