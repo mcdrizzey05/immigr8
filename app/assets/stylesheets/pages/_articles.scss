@@ -67,6 +67,7 @@
   display: flex;
   border: 1px solid #7FC8F8;
   margin: 5px;
+  border-radius: 5px;
 }
 
 .add-comment-content {
@@ -89,6 +90,11 @@
 .comment-icon-button {
   background-color: white;
   border: none;
+  :hover{
+    color: $darkblue;
+    opacity: .8;
+    transition: 0.3s;
+  }
 }
 
 .user-picture-section {
@@ -197,22 +203,23 @@
   margin: auto;
   border-radius: 5px;
   height: 20px;
-  vertical-align: middle;
   box-sizing: border-box;
-  margin-top: -2px;
   background: #032033;
   color: white;
+  width: 80px;
 }
 
 .translate-form {
     select {color: $darkblue;
     font-size: small;};
     background: none;
+    :hover{opacity: 0.8};
 }
 
 .translate-button:hover {
   background-color: white;
   color: $darkblue;
+  opacity: 0.5;
   transition: 0.3s;
 }
 
