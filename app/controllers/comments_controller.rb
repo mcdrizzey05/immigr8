@@ -11,8 +11,16 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.article = @article
     @comment.user = current_user
-    @comment.save
-    redirect_to article_comments_path
+
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to article_comments_path }
+        format.json
+      else
+        format.html { render "articles/show", status: :unprocessable_entity }
+        format.json
+      end
+    end
   end
 
 

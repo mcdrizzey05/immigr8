@@ -1,0 +1,18 @@
+<div class="comment-card">
+  <div class="user-picture-section">
+    <% if comment.user.photo? %>
+      <%= image_tag(comment.user.photo, class: "user-picture") %>
+    <% else %>
+      <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="user-picture">
+    <% end %>
+  </div>
+  <div class="comment-content-time">
+    <div class="comment-timestamp">
+      <%= link_to comment.user.username, user_path(comment.user) %>, <%= comment.created_at.strftime("%B %d, %Y") %>
+      <% if comment.user == current_user %>
+      - <%= link_to "delete", comment_delete_path(comment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% end %>
+    </div>
+    <p><%= comment.content %></p>
+  </div>
+</div>
