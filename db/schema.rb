@@ -121,7 +121,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_083950) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "location"
-    t.string "photo"
     t.string "first_name"
     t.string "last_name"
     t.integer "points", default: 0

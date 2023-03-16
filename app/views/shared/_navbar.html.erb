@@ -40,16 +40,14 @@
           <% end %>
         </ul>
 
-        <div class="avatar">
-          <% if user_signed_in? %>
-            <% if current_user.photo? %>
-              <%= cl_image_tag current_user.photo.key, class: "navbar-profile-image" %>
-            <% else %>
-              <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="navbar-profile-image">
-            <% end %>
+      <div class="avatar">
+        <% if user_signed_in? %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "navbar-profile-image" %>
+          <% else %>
+            <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="navbar-profile-image">
           <% end %>
-        </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="profile-picture">
-    <% if @user.photo? %>
+    <% if @user.photo.attached? %>
       <%= image_tag(@user.photo, class: "profile-image") %>
     <% else %>
       <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="profile-image">
@@ -15,6 +15,7 @@
         <h1><%= @user.first_name %>'s profile</h1>
         <h5><%= @user.username %></h5>
             <div class="user-button">
+            <% @user.points = (@user.articles.count*10) %>
             <p class="view-user-badges">User badges:</p>
               <% if @user.points < 1 %>
                 <p class="new-user">👶 New user! No points yet.</p>
