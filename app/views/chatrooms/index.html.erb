@@ -1,6 +1,6 @@
 <div class="container chat-index">
   <div class="broader-chatrooms-container">
-  <i class="fa-solid fa-arrow-left" style="color:#032033"></i>
+    <i class="fa-solid fa-arrow-left" style="color:#032033"></i>
     <%= link_to "Back to profile", users_path, class: "back-to-link", style:"color:#032033" %>
     <div class="chatrooms-messages-container">
       <% if current_user.chatrooms.empty? %>
