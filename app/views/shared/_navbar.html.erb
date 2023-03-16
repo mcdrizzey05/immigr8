@@ -1,43 +1,44 @@
-<div class="navbar navbar-expand-lg navbar-lewagon navbar-light bg-white d-flex">
-  <div class="container-fluid">
+<div class="navbar-test fixed-top">
+  <div class="navbar navbar-expand-lg navbar-lewagon navbar-light bg-white d-flex">
+    <div class="container-fluid">
 
-    <!-- Toggle button -->
-    <button class="navbar-toggler toggler-position" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Toggle button -->
+      <button class="navbar-toggler toggler-position" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="container-logo justify-content-start">
-      <a href="/" id="logo"><h1>Immigr8</h1></a>
-    </div>
+      <div class="container-logo justify-content-start">
+        <a href="/" id="logo"><h1>Immigr8</h1></a>
+      </div>
 
-    <div class="collapse navbar-collapse collapse-bg collapse-style" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active nav-item-style">
-            <%= link_to "Home", categories_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item nav-item-style">
-            <%= link_to "Messages", :chatrooms, class: "nav-link" %>
-          </li>
+      <div class="collapse navbar-collapse collapse-bg collapse-style" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item active nav-item-style">
+              <%= link_to "Home", categories_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item nav-item-style">
+              <%= link_to "Messages", :chatrooms, class: "nav-link" %>
+            </li>
 
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle dropdown-style" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentCollapse">Articles</a>
-            <ul class="dropdown-menu dropdown-menu-style" id="navbarSupportedContentCollapse">
-              <li><%= link_to "Submit an article", article_new_path, class: "nav-link" %></li>
-              <li><%= link_to "My articles", user_articles_path, class: "nav-link" %></li>
-            </ul>
-          </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle dropdown-style" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentCollapse">Articles</a>
+              <ul class="dropdown-menu dropdown-menu-style" id="navbarSupportedContentCollapse">
+                <li><%= link_to "Submit an article", article_new_path, class: "nav-link" %></li>
+                <li><%= link_to "My articles", user_articles_path, class: "nav-link" %></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown nav-item-style">
-            <%= link_to "Profile", users_path, class: "nav-link" %>
-          </li>
+            <li class="nav-item dropdown nav-item-style">
+              <%= link_to "Profile", users_path, class: "nav-link" %>
+            </li>
 
-        <% else %>
-          <li class="nav-item nav-item-style">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+          <% else %>
+            <li class="nav-item nav-item-style">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
 
       <div class="avatar">
         <% if user_signed_in? %>

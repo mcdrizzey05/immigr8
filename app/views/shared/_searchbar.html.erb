@@ -4,7 +4,7 @@
       <div class="d-row">
         <%= simple_form_for :search, url: articles_path, method: :get do |f| %>
         <div class="search-form-control form-group d-flex search-input">
-          <div><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div class="search-icon"><i class="fa-solid fa-magnifying-glass p-l-50px"></i></div>
           <%= form_with url: articles_path, method: :get, class: "d-flex" do  %>
             <%= text_field_tag :query,
             params[:query],
