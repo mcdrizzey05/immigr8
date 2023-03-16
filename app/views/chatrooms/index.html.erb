@@ -13,7 +13,7 @@
                 <% if chatroom.filter_current_user(current_user).first.photo = nil %>
                   <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="profile-image-chat">
                 <% else %>
-                  <%#= image_tag(chatroom.filter_current_user(current_user).first.photo, class: "profile-image-chat") %>
+                  <%= image_tag(chatroom.filter_current_user(current_user).first.photo, class: "profile-image-chat") %>
                 <% end %>
               Conversation with: <%= chatroom.filter_current_user(current_user).first.first_name%></p>
             </div>
