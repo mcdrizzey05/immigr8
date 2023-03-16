@@ -29,6 +29,12 @@ class FavouritesController < ApplicationController
     redirect_to favourites_path, status: :see_other
   end
 
+  def destroy_article
+    @favourite = Favourite.find(params[:id])
+    @favourite.destroy
+    redirect_to articles_path, status: :see_other
+  end
+
   private
 
   def favourite_params
