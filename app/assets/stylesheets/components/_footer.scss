@@ -1,17 +1,19 @@
-body{
-  position: relative;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50px;
-  padding: 0px 50px;
+  padding: 0px 20px;
   background-color: white;
+  // position: absolute;
+  bottom: 0;
+}
+
+body{
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .footer-links {
