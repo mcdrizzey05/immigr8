@@ -1,7 +1,10 @@
-<div id="message-<%= message.id %>" class="<%= current_user == message.user ? "sender" : "reciver" %>">
-    <strong><%= message.user.username %></strong>
-  <small>
-    <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-  </small>
-    <p><%= message.content %></p>
-</div>
+
+<div id="message-<%= message.id %>" class="message-row d-flex <%= current_user == message.user ? 'justify-content-end' : 'justify-content-start' %>">
+    <div class="<%= current_user == message.user ? 'sender' : 'receiver' %>">
+      <strong><%= message.user.username %></strong>
+      <small>
+       <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      </small>
+      <p style="display: list-item; list-style: none;"><%= message.content %></p>
+    </div>
+  </div>

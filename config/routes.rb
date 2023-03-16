@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :articles, only: ['destroy', 'edit', 'update', 'index', 'show'] do
     get :translate
-    resources :favourites, only: ['create']
+    resources :favourites, only: ['create', 'destroy']
     resources :comments, only: ['create']
   end
 

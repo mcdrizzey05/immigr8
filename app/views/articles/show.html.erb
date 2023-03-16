@@ -12,7 +12,8 @@
     <div class="article-content">
       <div class="article-header">
         <h4><%= @article.title %></h4>
-        <h5>By: <%= link_to @article.user.first_name, user_path(@article.user.id) %></h5>
+        <h5>Posted on <%= @article.created_at.strftime("%Y-%m-%d") %></h5>
+        <h5>By: <%= link_to (@article.user.username), user_path(@article.user.id) %></h5>
           <div class="article-buttons">
             <% if @article.user == current_user %>
               <span class="message-icon">
@@ -30,8 +31,15 @@
                 <% end %>
               </span>
               <%= simple_form_for [@article, @article.favourites.new] do |f| %>
-               <i> <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger", title: "Favourite this article" do %> </i>
+                <% array_1 = current_user.favourites.ids.select { |el| @article.favourite_ids.include?(el)} %>
+                  <% if !array_1.empty? %>
+                    <%= link_to favourites_path do %>
+                      <i class="fa-solid fa-star fa-2x fa-padding fa-bigger"></i>
+                    <% end %>
+                  <% else %>
+                    <i> <%= f.button :button, class: "fa-regular fa-star fa-2x fa-padding fa-bigger", title: "Favourite this article" do %> </i>
                   <i></i>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
