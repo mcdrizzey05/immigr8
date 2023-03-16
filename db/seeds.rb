@@ -18,6 +18,7 @@ User.destroy_all
     username: 'alina_maus',
     location: 'Berlin',
     password: '123456',
+    points: 10
     # photo: 'https://res.cloudinary.com/diafrrnkz/image/upload/v1678286693/Screenshot_2023-03-08_at_15.44.36_a9lg5d.png'
     )
 
@@ -27,6 +28,7 @@ User.destroy_all
     username: 'andreia11',
     location: 'Berlin',
     password: '123456',
+    points: 30
     # photo: "https://avatars.githubusercontent.com/u/121885895?v=4.jpg"
   )
 
@@ -36,6 +38,7 @@ User.destroy_all
     username: 'mc_maus',
     location: 'Berlin',
     password: '123456',
+    points: 42
     # photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673210155/dlar11dnztiwodpgpdxp.jpg"
   )
 
@@ -45,6 +48,7 @@ User.destroy_all
     username: 'jenni11',
     location: 'Berlin',
     password: '123456',
+    points: 101
     # photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673126909/pa9szeqfushvix7lcgmz.jpg"
   )
 
