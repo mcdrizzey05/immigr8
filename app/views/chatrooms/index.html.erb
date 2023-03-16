@@ -1,4 +1,4 @@
-<div class="container chat-index">
+<div class="container">
   <div class="broader-chatrooms-container">
     <i class="fa-solid fa-arrow-left" style="color:#032033"></i>
     <%= link_to "Back to profile", users_path, class: "back-to-link", style:"color:#032033" %>
@@ -10,7 +10,7 @@
           <%= link_to chatroom, class:"text-decoration-none text-reset" do %>
             <div class="category-message-card">
               <p class="message-first-name">
-                <% if chatroom.filter_current_user(current_user)&.first&.photo&.attached? %>
+                <% if chatroom.filter_current_user(current_user).first.photo.attached? %>
                   <%= image_tag(chatroom.filter_current_user(current_user).first.photo, class: "profile-image-chat") %>
                 <% else %>
                   <img src="https://res.cloudinary.com/diafrrnkz/image/upload/v1678366392/Screenshot_2023-03-09_at_13.51.43_ziieip.png" class="profile-image-chat">
@@ -20,6 +20,7 @@
           <% end %>
         <% end %>
       <% end %>
+      <div style="height: 600px"></div>
     </div>
   </div>
 </div>
