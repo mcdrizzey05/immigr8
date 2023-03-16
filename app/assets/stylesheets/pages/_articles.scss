@@ -1,9 +1,10 @@
 .article-content {
-  padding: 5px;
+  padding: 15px;
   margin: 10px;
   background-color: white;
   border: 3px solid #032033;
   border-radius: 5px;
+  text-align: justify;
 }
 
 .comment-section {
@@ -67,6 +68,7 @@
   display: flex;
   border: 1px solid #7FC8F8;
   margin: 5px;
+  border-radius: 5px;
 }
 
 .add-comment-content {
@@ -140,7 +142,6 @@
 .article-content p {
   font-size: medium !important;
 }
-
 
 .back-to-btn {
   padding: 5px 5px 10px 5px;
@@ -229,4 +230,14 @@
   border-radius: 5px;
   height: 20px;
   // background: none;
+}
+
+.comment-icon-button :hover{
+  color: $darkblue;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.add-comment-section {
+
 }
