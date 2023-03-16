@@ -15,6 +15,7 @@
         <h1><%= @user.first_name %>'s profile</h1>
         <h5><%= @user.username %></h5>
             <div class="user-button">
+            <% @user.points = (@user.articles.count*10) %>
             <p class="view-user-badges">User badges:</p>
               <% if @user.points < 1 %>
                 <p class="new-user">👶 New user! No points yet.</p>

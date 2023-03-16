@@ -12,6 +12,7 @@
       <div class="user-box">
         <div class="user-header">
           <h1>Welcome, <%= @user.first_name %>!</h1>
+          <% current_user.points = (@user.articles.count*10) %>
           <p class="badges-title">Your badges:</p>
             <% if current_user.points < 1 %>
               <p class="new-user">👶 New user! No points yet.</p>
