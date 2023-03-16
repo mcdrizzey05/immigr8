@@ -6,7 +6,7 @@
   <form action="<%= article_translate_path(@article) %>" class="translate-form" data-translate-target="form" data-action="submit->translate#fetch">
       <input type="hidden" class="article-id-input" value="<%= @article.id %>">
       <select id="article-id-input" data-translate-target="select">
-        <option>Language</option>
+        <option value="EN">Select language</option>
         <option value="BG">Bulgarian</option>
         <option value="BG">Bulgarian</option>
         <option value="CS">Czech</option>
