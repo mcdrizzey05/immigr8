@@ -38,7 +38,7 @@ User.destroy_all
     username: 'mc_maus',
     location: 'Berlin',
     password: '123456',
-    points: 42
+    points: 39
     # photo: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1673210155/dlar11dnztiwodpgpdxp.jpg"
   )
 
